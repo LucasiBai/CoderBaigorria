@@ -1,0 +1,35 @@
+a {
+	text-decoration: none;
+	color: aliceblue;
+}
+a:hover {
+	color: rgb(209, 215, 221);
+}
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: "Inter", sans-serif;
+}
+li {
+	list-style-type: none;
+}
+header {
+	background-color: rgb(170, 155, 145);
+}
+nav {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+.nav--logo {
+	width: 95px;
+	margin: 0.7rem;
+}
+.nav--items {
+	display: flex;
+	flex-direction: row;
+}
+.nav-item {
+	margin: 0.5rem;
+}
