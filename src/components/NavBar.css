@@ -14,7 +14,7 @@ li {
 	list-style-type: none;
 }
 header {
-	background-color: rgb(170, 155, 145);
+	background-color: #005047;
 }
 nav {
 	display: flex;
@@ -24,11 +24,12 @@ nav {
 }
 .nav--logo {
 	width: 95px;
-	margin: 0.7rem;
+	margin: 0.7rem 1rem;
 }
 .nav--items {
 	display: flex;
 	flex-direction: row;
+	margin: 0 1rem;
 }
 .nav-item {
 	margin: 0.5rem;
