@@ -1,0 +1,16 @@
+.list--items {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.list--item {
+	margin: 1rem;
+}
+.greeting {
+	margin: 2rem;
+	color: aliceblue;
+}
+.list--box {
+	max-width: 1300px;
+	margin: 0 auto;
+}

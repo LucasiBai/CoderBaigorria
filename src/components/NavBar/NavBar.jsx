@@ -1,5 +1,6 @@
 import React from "react";
 import "./NavBar.css";
+import CartWidget from "../CartWidget/CartWidget";
 
 export default function NavBar({ brandImg }) {
 	return (
@@ -20,7 +21,9 @@ export default function NavBar({ brandImg }) {
 					<a href="#">About Us</a>
 				</li>
 				<li className="nav-item">
-					<a href="#">Cart</a>
+					<a href="#">
+						Cart <CartWidget></CartWidget>
+					</a>
 				</li>
 			</ul>
 		</nav>
