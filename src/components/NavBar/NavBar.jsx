@@ -22,7 +22,7 @@ export default function NavBar({ brandImg }) {
 				</li>
 				<li className="nav-item">
 					<a href="#">
-						Cart <CartWidget></CartWidget>
+						<CartWidget name="Cart " />
 					</a>
 				</li>
 			</ul>

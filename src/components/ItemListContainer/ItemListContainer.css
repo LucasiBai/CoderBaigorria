@@ -9,6 +9,8 @@
 .greeting {
 	margin: 2rem;
 	color: aliceblue;
+	font-size: 34px;
+	text-shadow: 1px 1px 19px black;
 }
 .list--box {
 	max-width: 1300px;
