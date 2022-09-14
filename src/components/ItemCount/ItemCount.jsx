@@ -1,8 +1,7 @@
 import { useState } from "react";
-import GhostButton from "../GhostButton/GhostButton";
 import "./ItemCount.css";
 
-export default function ItemCount({ itemName, initial, stock, img }) {
+export default function ItemCount({ itemName, initial, stock, img, margin }) {
 	const [itemCount, setItemCount] = useState(initial);
 
 	const changeItemCount = (operation) => {
@@ -15,29 +14,24 @@ export default function ItemCount({ itemName, initial, stock, img }) {
 	};
 
 	return (
-		<div className="counter-box">
-			<h4 className="counter-box__item">{itemName}</h4>
-			<img src={img} alt={itemName} className="card--img" />
-			<div className="counter-box__item">
-				<button
-					onClick={() => {
-						changeItemCount("rest");
-					}}
-					className="counter-button"
-				>
-					-
-				</button>
-				<span>{itemCount}</span>
-				<button
-					onClick={() => {
-						changeItemCount("sum");
-					}}
-					className="counter-button"
-				>
-					+
-				</button>
-			</div>
-			<GhostButton text="Agregar al carrito" className="counter-box__item" />
+		<div className="counter-box-display" style={{ margin: margin }}>
+			<button
+				onClick={() => {
+					changeItemCount("rest");
+				}}
+				className="counter-button"
+			>
+				-
+			</button>
+			<span>{itemCount}</span>
+			<button
+				onClick={() => {
+					changeItemCount("sum");
+				}}
+				className="counter-button"
+			>
+				+
+			</button>
 		</div>
 	);
 }

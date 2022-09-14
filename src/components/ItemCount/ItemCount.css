@@ -1,11 +1,4 @@
-.counter-box {
-	background-color: aliceblue;
-	padding: 1rem;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-.counter-box div {
+.counter-box-display {
 	color: #009688;
 	background: #fff;
 	border: 1px solid #009688;
@@ -20,9 +13,6 @@
 	align-items: center;
 	width: 154px;
 }
-.counter-box h4 {
-	width: 154px;
-}
 .counter-button {
 	font-size: 25px;
 	color: #009688;
@@ -35,8 +25,4 @@
 	color: #fff;
 	background: #009688;
 	border-radius: 10px;
-}
-
-.counter-box__item {
-	margin: 1rem;
 }

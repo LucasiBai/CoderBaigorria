@@ -1,5 +1,5 @@
 import Card from "../Card/Card";
-import ItemCount from "../ItemCount/ItemCount";
+import CartInstance from "../CartInstance/CartInstance";
 import "./ItemListContainer.css";
 const ItemListContainer = ({ greeting }) => {
 	return (
@@ -39,7 +39,7 @@ const ItemListContainer = ({ greeting }) => {
 				/>
 			</div>
 			<div>
-				<ItemCount
+				<CartInstance
 					itemName={"Velador Luna Llena Impreso 3d Eco"}
 					initial={1}
 					stock={14}
