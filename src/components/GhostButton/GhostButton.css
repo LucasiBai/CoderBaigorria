@@ -1,0 +1,19 @@
+.ghost-button {
+	color: #009688;
+	background: #fff;
+	border: 1px solid #009688;
+	font-size: 17px;
+	padding: 7px 12px;
+	font-weight: normal;
+	display: inline-block;
+	text-decoration: none;
+	font-family: "Open Sans", sans-serif;
+	min-width: 120px;
+	border-radius: 10px;
+}
+.ghost-button:hover {
+	cursor: pointer;
+	color: #fff;
+	background: #009688;
+	border: 1px solid #fff;
+}

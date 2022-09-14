@@ -1,4 +1,5 @@
 import Card from "../Card/Card";
+import ItemCount from "../ItemCount/ItemCount";
 import "./ItemListContainer.css";
 const ItemListContainer = ({ greeting }) => {
 	return (
@@ -35,6 +36,16 @@ const ItemListContainer = ({ greeting }) => {
           Lámpara Gadnic Luna 13cm 16 Colores RGB + Blanco Luz Cálida y Fría"
 					price="5.299"
 					img="https://http2.mlstatic.com/D_NQ_NP_720693-MLA50184297436_062022-O.webp"
+				/>
+			</div>
+			<div>
+				<ItemCount
+					itemName={"Velador Luna Llena Impreso 3d Eco"}
+					initial={1}
+					stock={14}
+					img={
+						"https://http2.mlstatic.com/D_NQ_NP_720693-MLA50184297436_062022-O.webp"
+					}
 				/>
 			</div>
 		</section>
