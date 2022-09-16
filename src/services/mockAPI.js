@@ -5,6 +5,7 @@ const products = [
 		description: "Malig carcinoid tumors of the appendix, lg int, and rectum",
 		price: "$5061.45",
 		img: "https://http2.mlstatic.com/D_NQ_NP_647304-MLA48870225809_012022-O.webp",
+		stock: 5,
 	},
 	{
 		id: 2,
@@ -12,6 +13,7 @@ const products = [
 		description: "Occupational exposure to extreme temperature",
 		price: "$7480.83",
 		img: "https://http2.mlstatic.com/D_NQ_NP_887880-MLA49215970688_022022-O.webp",
+		stock: 12,
 	},
 	{
 		id: 3,
@@ -19,6 +21,7 @@ const products = [
 		description: "Water transport accident involving military watercraft",
 		price: "$7208.20",
 		img: "https://http2.mlstatic.com/D_NQ_NP_662815-MLA32618384530_102019-W.webp",
+		stock: 5,
 	},
 	{
 		id: 4,
@@ -26,6 +29,7 @@ const products = [
 		description: "Disp fx of low epiphy (separation) of r femr, 7thJ",
 		price: "$7477.58",
 		img: "https://http2.mlstatic.com/D_NQ_NP_991919-MLA32814396286_112019-O.webp",
+		stock: 16,
 	},
 	{
 		id: 5,
@@ -33,6 +37,7 @@ const products = [
 		description: "Excessive weight gain in pregnancy, first trimester",
 		price: "$6479.02",
 		img: "https://http2.mlstatic.com/D_NQ_NP_720693-MLA50184297436_062022-O.webp",
+		stock: 7,
 	},
 	{
 		id: 6,
@@ -40,6 +45,7 @@ const products = [
 		description: "Unspecified fracture of right ischium, sequela",
 		price: "$4125.09",
 		img: "https://http2.mlstatic.com/D_NQ_NP_901496-MLA50264890144_062022-W.webp",
+		stock: 5,
 	},
 	{
 		id: 7,
@@ -47,6 +53,7 @@ const products = [
 		description: "Subluxation of unsp parts of unspecified shoulder girdle",
 		price: "$9112.50",
 		img: "https://http2.mlstatic.com/D_NQ_NP_887880-MLA49215970688_022022-W.webp",
+		stock: 9,
 	},
 	{
 		id: 8,
@@ -54,6 +61,7 @@ const products = [
 		description: "Nondisp midcervical fx l femr, 7thJ",
 		price: "$9477.20",
 		img: "https://http2.mlstatic.com/D_NQ_NP_846639-MLA49041116784_022022-O.webp",
+		stock: 2,
 	},
 	{
 		id: 9,
@@ -61,6 +69,7 @@ const products = [
 		description: "Other specified sprain of right wrist, sequela",
 		price: "$3391.06",
 		img: "https://http2.mlstatic.com/D_NQ_NP_707804-MLA31351091874_072019-O.webphttps://http2.mlstatic.com/D_NQ_NP_707804-MLA31351091874_072019-O.webp",
+		stock: 18,
 	},
 	{
 		id: 10,
@@ -68,11 +77,12 @@ const products = [
 		description: "Burn of unsp deg mult sites of unsp wrist and hand, sequela",
 		price: "$5565.07",
 		img: "https://http2.mlstatic.com/D_NQ_NP_778015-MLA31725829695_082019-O.webp",
+		stock: 5,
 	},
 ];
 
 export default function getProducts() {
 	return new Promise((resolve, reject) => {
-		setTimeout(() => resolve(products), 2500);
+		setTimeout(() => resolve(products), 2000);
 	});
 }
