@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./ItemCount.css";
 
-export default function ItemCount({ itemName, initial, stock, img, margin }) {
+export default function ItemCount({ initial, stock, margin }) {
 	const [itemCount, setItemCount] = useState(initial);
 
 	const changeItemCount = (operation) => {

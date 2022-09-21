@@ -1,7 +1,7 @@
-.ghost-button {
-	color: #009688;
-	background: #fff;
-	border: 1px solid #009688;
+.button {
+	color: #fff;
+	background: #009688;
+	border: 1px solid #fff;
 	font-size: 17px;
 	padding: 7px 12px;
 	font-weight: normal;
@@ -12,9 +12,9 @@
 	border-radius: 10px;
 	margin: 0.2rem;
 }
-.ghost-button:hover {
+.button:hover {
 	cursor: pointer;
-	color: #fff;
-	background: #009688;
-	border: 1px solid #fff;
+	color: #009688;
+	background: #fff;
+	border: 1px solid #009688;
 }

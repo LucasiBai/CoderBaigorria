@@ -23,7 +23,7 @@ const ItemListContainer = ({ greeting }) => {
 		<section className="list--box">
 			<h2 className="greeting">{greeting}</h2>
 			<ItemList datos={data} />
-			<div>
+			{/* <div>
 				<CartInstance
 					itemName={"Velador Luna Llena Impreso 3d Eco"}
 					initial={1}
@@ -32,7 +32,7 @@ const ItemListContainer = ({ greeting }) => {
 						"https://http2.mlstatic.com/D_NQ_NP_720693-MLA50184297436_062022-O.webp"
 					}
 				/>
-			</div>
+			</div> */}
 		</section>
 	);
 };

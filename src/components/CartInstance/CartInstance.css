@@ -3,13 +3,14 @@
 	padding: 1rem;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	align-items: center;
 	border-radius: 10px;
 	box-shadow: 1px 1px 19px black;
 }
-.counter-box h4 {
-	width: 154px;
+.counter-box div h3 {
+	margin: 0 1rem;
 }
 .counter-box__item {
-	margin: 1rem;
+	margin: 2rem;
 }

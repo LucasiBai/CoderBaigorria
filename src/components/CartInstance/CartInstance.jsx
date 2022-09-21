@@ -1,19 +1,21 @@
 import GhostButton from "../GhostButton/GhostButton";
+import Button from "../Button/Button";
 import ItemCount from "../ItemCount/ItemCount";
 import "./CartInstance.css";
 
-export default function CartInstance({ itemName, initial, stock, img }) {
+export default function CartInstance({ initial, stock }) {
 	return (
 		<div className="counter-box">
-			<h4 className="counter-box__item">{itemName}</h4>
-			<img src={img} alt={itemName} className="card--img" />
-			<ItemCount
-				className="counter-box__item"
-				itemName={itemName}
-				initial={initial}
-				stock={stock}
-				margin="0.7rem"
-			/>
+			<div>
+				<h3>Cantidad</h3>
+				<ItemCount
+					className="counter-box__item"
+					initial={initial}
+					stock={stock}
+					margin="0.7rem 0.7rem 1.5rem 0.7rem"
+				/>
+			</div>
+			<Button text="Comprar ahora" className="counter-box__item" />
 			<GhostButton text="Agregar al carrito" className="counter-box__item" />
 		</div>
 	);

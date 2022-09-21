@@ -1,0 +1,9 @@
+.detail-item {
+	display: flex;
+}
+.detail-img-item {
+	height: 300px;
+	width: 400px;
+	object-fit: cover;
+	border-radius: 10px;
+}
