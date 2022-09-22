@@ -12,6 +12,7 @@
 	justify-content: space-between;
 	align-items: center;
 	width: 200px;
+	user-select: none;
 }
 .counter-button {
 	font-size: 25px;
@@ -19,10 +20,15 @@
 	background: none;
 	border: none;
 	padding: 0.3rem 1rem;
+	user-select: none;
 }
 .counter-button:hover {
 	cursor: pointer;
 	color: #fff;
 	background: #009688;
 	border-radius: 10px;
+}
+.disabled {
+	pointer-events: none;
+	color: #666666;
 }

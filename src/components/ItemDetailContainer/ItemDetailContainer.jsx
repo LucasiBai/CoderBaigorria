@@ -1,17 +1,30 @@
+import { useState, useEffect } from "react";
+
+import "./ItemDetailContainer.css";
+
+import { getProduct } from "../../services/mockAPI";
 import React from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 
 function ItemDetailContainer() {
+	const [product, setProduct] = useState({ stock: 1 });
+
+	useEffect(() => {
+		const getItem = async () => {
+			const res = await getProduct(5);
+			setProduct(res);
+		};
+		getItem();
+	}, [product]);
+
 	return (
-		<section>
+		<section className="item-detail-container">
 			<ItemDetail
-				title={"holi"}
-				img={
-					"https://http2.mlstatic.com/D_NQ_NP_833776-MLA48496082251_122021-O.webp"
-				}
-				price={1344}
-				detail={"xss"}
-				stock={4}
+				title={product.title}
+				img={product.img}
+				price={product.price}
+				detail={product.description}
+				stock={product.stock}
 			/>
 		</section>
 	);

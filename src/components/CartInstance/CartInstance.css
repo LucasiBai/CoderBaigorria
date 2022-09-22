@@ -6,7 +6,7 @@
 	justify-content: center;
 	align-items: center;
 	border-radius: 10px;
-	box-shadow: 1px 1px 19px black;
+	box-shadow: 1px 1px 9px #0000006b;
 }
 .counter-box div h3 {
 	margin: 0 1rem;

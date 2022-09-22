@@ -1,9 +1,47 @@
 .detail-item {
 	display: flex;
+	background-color: aliceblue;
+	padding: 2.5rem;
+	border-radius: 15px;
+	width: 930px;
+	justify-content: center;
+	box-shadow: 1px 1px 9px #0000004b;
+}
+.detail-item a {
+	color: #0cb4a3;
+}
+.detail-description__title {
+	font-size: 22px;
+}
+.detail-description {
+	margin: 1rem;
 }
 .detail-img-item {
 	height: 300px;
 	width: 400px;
 	object-fit: cover;
 	border-radius: 10px;
+	box-shadow: 1px 1px 9px #00000028;
+}
+.detail-description__price-box {
+	margin: 1rem 0.5rem;
+}
+
+.detail-description__price,
+.detail-description__cuotas,
+.detail-description__price-box a {
+	font-size: 25px;
+	font-weight: normal;
+	margin: 2px;
+}
+.detail-description__cuotas,
+.detail-description__price-box a {
+	font-size: 16px;
+}
+
+.detail-description__data h4,
+.detail-description__data a,
+.detail-description__data ul {
+	font-size: 15px;
+	margin: 2px;
 }

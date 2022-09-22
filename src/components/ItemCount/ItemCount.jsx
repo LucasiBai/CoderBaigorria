@@ -5,9 +5,6 @@ export default function ItemCount({ initial, stock, margin }) {
 	const [itemCount, setItemCount] = useState(initial);
 
 	const changeItemCount = (operation) => {
-		if (itemCount === initial && operation === "rest") return;
-		if (itemCount === stock && operation === "sum") return;
-
 		operation === "sum"
 			? setItemCount(itemCount + 1)
 			: setItemCount(itemCount - 1);
@@ -19,7 +16,9 @@ export default function ItemCount({ initial, stock, margin }) {
 				onClick={() => {
 					changeItemCount("rest");
 				}}
-				className="counter-button"
+				className={
+					initial === itemCount ? "counter-button disabled" : "counter-button"
+				}
 			>
 				-
 			</button>
@@ -28,7 +27,9 @@ export default function ItemCount({ initial, stock, margin }) {
 				onClick={() => {
 					changeItemCount("sum");
 				}}
-				className="counter-button"
+				className={
+					stock === itemCount ? "counter-button disabled" : "counter-button"
+				}
 			>
 				+
 			</button>
