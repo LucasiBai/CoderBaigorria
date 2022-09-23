@@ -6,6 +6,7 @@ const products = [
 		price: 5061.45,
 		img: "https://http2.mlstatic.com/D_NQ_NP_647304-MLA48870225809_012022-O.webp",
 		stock: 5,
+		category: "hogar",
 	},
 	{
 		id: 2,
@@ -14,6 +15,7 @@ const products = [
 		price: 7480.83,
 		img: "https://http2.mlstatic.com/D_NQ_NP_887880-MLA49215970688_022022-O.webp",
 		stock: 12,
+		category: "jardin",
 	},
 	{
 		id: 3,
@@ -22,6 +24,7 @@ const products = [
 		price: 7208.2,
 		img: "https://http2.mlstatic.com/D_NQ_NP_662815-MLA32618384530_102019-W.webp",
 		stock: 5,
+		category: "hogar",
 	},
 	{
 		id: 4,
@@ -30,6 +33,7 @@ const products = [
 		price: 7477.58,
 		img: "https://http2.mlstatic.com/D_NQ_NP_991919-MLA32814396286_112019-O.webp",
 		stock: 16,
+		category: "habitacion",
 	},
 	{
 		id: 5,
@@ -38,6 +42,7 @@ const products = [
 		price: 6479.02,
 		img: "https://http2.mlstatic.com/D_NQ_NP_720693-MLA50184297436_062022-O.webp",
 		stock: 7,
+		category: "habitacion",
 	},
 	{
 		id: 6,
@@ -46,6 +51,7 @@ const products = [
 		price: 4125.09,
 		img: "https://http2.mlstatic.com/D_NQ_NP_901496-MLA50264890144_062022-W.webp",
 		stock: 5,
+		category: "jardin",
 	},
 	{
 		id: 7,
@@ -54,6 +60,7 @@ const products = [
 		price: 9112.5,
 		img: "https://http2.mlstatic.com/D_NQ_NP_887880-MLA49215970688_022022-W.webp",
 		stock: 9,
+		category: "jardin",
 	},
 	{
 		id: 8,
@@ -62,6 +69,7 @@ const products = [
 		price: 9477.2,
 		img: "https://http2.mlstatic.com/D_NQ_NP_846639-MLA49041116784_022022-O.webp",
 		stock: 2,
+		category: "jardin",
 	},
 	{
 		id: 9,
@@ -70,6 +78,7 @@ const products = [
 		price: 3391.06,
 		img: "https://http2.mlstatic.com/D_NQ_NP_707804-MLA31351091874_072019-O.webphttps://http2.mlstatic.com/D_NQ_NP_707804-MLA31351091874_072019-O.webp",
 		stock: 18,
+		category: "jardin",
 	},
 	{
 		id: 10,
@@ -78,6 +87,7 @@ const products = [
 		price: 5565.07,
 		img: "https://http2.mlstatic.com/D_NQ_NP_778015-MLA31725829695_082019-O.webp",
 		stock: 5,
+		category: "habitacion",
 	},
 ];
 
@@ -86,6 +96,16 @@ export default function getProducts() {
 		setTimeout(() => resolve(products), 2000);
 	});
 }
+
+export function getFilterProducts(categoryId) {
+	return new Promise((resolve, reject) => {
+		setTimeout(
+			() => resolve(products.filter((item) => item.category === categoryId)),
+			2000,
+		);
+	});
+}
+
 export function getProduct(itemId) {
 	return new Promise((resolve, reject) => {
 		setTimeout(
