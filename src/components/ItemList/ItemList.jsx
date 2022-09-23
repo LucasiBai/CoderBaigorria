@@ -6,6 +6,7 @@ const ItemList = ({ datos }) => {
 			{datos.map((data) => (
 				<Card
 					key={data.id}
+					id={data.id}
 					title={data.title}
 					description={data.description}
 					price={data.price}

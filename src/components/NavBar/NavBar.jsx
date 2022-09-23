@@ -1,29 +1,31 @@
-import React from "react";
 import "./NavBar.css";
+
+import { Link } from "react-router-dom";
+
 import CartWidget from "../CartWidget/CartWidget";
 
 export default function NavBar({ brandImg }) {
 	return (
 		<nav>
 			<div>
-				<a href="#">
+				<Link to="/">
 					<img src={brandImg} alt="logo" className="nav--logo" />
-				</a>
+				</Link>
 			</div>
 			<ul className="nav--items">
 				<li className="nav-item">
-					<a href="#">Home</a>
+					<Link to="/">Home</Link>
 				</li>
 				<li className="nav-item">
-					<a href="#">Products</a>
+					<Link to="/">Products</Link>
 				</li>
 				<li className="nav-item">
-					<a href="#">About Us</a>
+					<Link to="/">About Us</Link>
 				</li>
 				<li className="nav-item">
-					<a href="#">
+					<Link to="/">
 						<CartWidget name="Cart " />
-					</a>
+					</Link>
 				</li>
 			</ul>
 		</nav>
