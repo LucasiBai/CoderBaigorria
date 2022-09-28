@@ -8,4 +8,5 @@ Se colocó todos los productos en el home, pudiendo acceder a los detalles de ca
 - Categorías: `/category/:categoria`
 - Productos: `/item/:itemId`
 
-![screen](https://user-images.githubusercontent.com/99888705/192899552-e1e51162-857a-40d3-acaf-aef7f857e1aa.gif)
+## Muestra de navegación:
+![screen2](https://user-images.githubusercontent.com/99888705/192900678-bae298b2-01f0-4e15-9674-c158e61e9523.gif)
