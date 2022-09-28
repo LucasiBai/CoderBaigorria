@@ -12,6 +12,7 @@ const ItemListContainer = ({ greeting }) => {
 	const [greet, setGreeting] = useState(greeting);
 
 	const { categoryId } = useParams();
+
 	// Obtenemos los datos
 	const getData = async () => {
 		if (!categoryId) {
@@ -27,7 +28,7 @@ const ItemListContainer = ({ greeting }) => {
 
 	useEffect(() => {
 		getData();
-	}, [data, greet]);
+	}, [categoryId]);
 
 	return (
 		<section className="list--box">

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Card.css";
 
 export default function Card({ id, title, img, description, price }) {
-	const productURL = `/item/${id}/${title.toLowerCase().split(" ").join("-")}`;
+	const productURL = `/item/${id}`;
 	return (
 		<article className="card">
 			<Link to={productURL}>

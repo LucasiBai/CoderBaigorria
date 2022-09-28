@@ -17,14 +17,18 @@ export default function NavBar({ brandImg }) {
 					<Link to="/">Home</Link>
 				</li>
 				<li className="nav-item">
-					<Link to="/">Products</Link>
+					<Link to="/category/jardin">Jardín</Link>
 				</li>
 				<li className="nav-item">
-					<Link to="/">About Us</Link>
+					<Link to="/category/hogar">Hogar</Link>
 				</li>
 				<li className="nav-item">
-					<Link to="/">
-						<CartWidget name="Cart " />
+					<Link to="/category/habitacion">Habitación</Link>
+				</li>
+				<li className="nav-item">
+					<Link to="/cart">
+						Cart
+						<CartWidget />
 					</Link>
 				</li>
 			</ul>
