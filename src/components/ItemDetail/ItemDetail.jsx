@@ -4,7 +4,15 @@ import Loader from "../Loader/Loader";
 
 import "./ItemDetail.css";
 
-function ItemDetail({ title, img, price, detail, stock }) {
+function ItemDetail({
+	title,
+	img,
+	price,
+	detail,
+	stock,
+	count,
+	handleFunction,
+}) {
 	return (
 		<article className="detail-item">
 			{!title ? (
@@ -30,7 +38,13 @@ function ItemDetail({ title, img, price, detail, stock }) {
 							<a href="">Ver más características</a>
 						</div>
 					</div>
-					<CartInstance stock={stock} initial={1} />
+					<CartInstance
+						stock={stock}
+						initial={1}
+						price={price}
+						count={count}
+						handleFunction={handleFunction}
+					/>
 				</React.Fragment>
 			)}
 		</article>

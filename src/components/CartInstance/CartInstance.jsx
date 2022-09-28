@@ -3,9 +3,18 @@ import Button from "../Button/Button";
 import ItemCount from "../ItemCount/ItemCount";
 import "./CartInstance.css";
 
-export default function CartInstance({ initial, stock }) {
+export default function CartInstance({
+	initial,
+	stock,
+	price,
+	count,
+	handleFunction,
+}) {
 	return (
 		<div className="counter-box">
+			<h3 className="detail-description__price" id="cart-instance__price">
+				${(price * count).toFixed(2)}
+			</h3>
 			<div>
 				<h3>Cantidad</h3>
 				<ItemCount
@@ -13,6 +22,7 @@ export default function CartInstance({ initial, stock }) {
 					initial={initial}
 					stock={stock}
 					margin="0.7rem 0.7rem 1.5rem 0.7rem"
+					handleFunction={handleFunction}
 				/>
 			</div>
 			<Button text="Comprar ahora" className="counter-box__item" />

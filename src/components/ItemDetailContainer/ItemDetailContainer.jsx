@@ -9,7 +9,14 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 
 function ItemDetailContainer() {
 	const [product, setProduct] = useState({});
+	const [count, setCount] = useState(1);
+
 	const { productId } = useParams();
+
+	const onAdd = (count) => {
+		setCount(count);
+		console.log(count);
+	};
 
 	useEffect(() => {
 		const getItem = async () => {
@@ -17,7 +24,7 @@ function ItemDetailContainer() {
 			setProduct(res);
 		};
 		getItem();
-	}, [productId]);
+	}, [productId, count]);
 
 	return (
 		<section className="item-detail-container">
@@ -27,6 +34,8 @@ function ItemDetailContainer() {
 				price={product.price}
 				detail={product.description}
 				stock={product.stock}
+				count={count}
+				handleFunction={onAdd}
 			/>
 		</section>
 	);

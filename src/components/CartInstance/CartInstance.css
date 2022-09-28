@@ -14,3 +14,7 @@
 .counter-box__item {
 	margin: 2rem;
 }
+#cart-instance__price {
+	margin: 1.5rem;
+	font-size: 35px;
+}

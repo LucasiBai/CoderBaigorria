@@ -1,13 +1,14 @@
 import { useState } from "react";
 import "./ItemCount.css";
 
-export default function ItemCount({ initial, stock, margin }) {
+export default function ItemCount({ initial, stock, margin, handleFunction }) {
 	const [itemCount, setItemCount] = useState(initial);
 
 	const changeItemCount = (operation) => {
-		operation === "sum"
-			? setItemCount(itemCount + 1)
-			: setItemCount(itemCount - 1);
+		const count = operation === "sum" ? itemCount + 1 : itemCount - 1;
+
+		setItemCount(count);
+		handleFunction(count);
 	};
 
 	return (
