@@ -14,6 +14,10 @@ function App() {
 				<Route path="/" element={<ItemListContainer greeting="Productos" />} />
 				<Route path="/item/:productId" element={<ItemDetailContainer />} />
 				<Route path="/category/:categoryId" element={<ItemListContainer />} />
+				<Route
+					path="/cart"
+					element={<h1 style={{ margin: "2rem", color: "white" }}>Carrito</h1>}
+				/>
 			</Routes>
 		</BrowserRouter>
 	);
