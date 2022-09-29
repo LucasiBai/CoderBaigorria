@@ -8,7 +8,7 @@
 	background-color: #41b3a5;
 	border-radius: 20px;
 	margin: 1rem;
-	box-shadow: 1px 1px 19px black;
+	box-shadow: 1px 1px 9px #00000082;
 	cursor: pointer;
 }
 .card--img {

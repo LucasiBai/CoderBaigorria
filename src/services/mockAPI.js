@@ -89,6 +89,24 @@ const products = [
 		stock: 5,
 		category: "habitacion",
 	},
+	{
+		id: 11,
+		title: "Spot Cabezal Ar111 Tacho Con Aro Y Conector Gu10",
+		description: "Nondisp midcervical fx l femr, 7thJ",
+		price: 9477.2,
+		img: "https://http2.mlstatic.com/D_NQ_NP_846639-MLA49041116784_022022-O.webp",
+		stock: 2,
+		category: "jardin",
+	},
+	{
+		id: 12,
+		title: "Lampara Colgante Diamante",
+		description: "Water transport accident involving military watercraft",
+		price: 7208.2,
+		img: "https://http2.mlstatic.com/D_NQ_NP_662815-MLA32618384530_102019-W.webp",
+		stock: 5,
+		category: "hogar",
+	},
 ];
 
 export default function getProducts() {

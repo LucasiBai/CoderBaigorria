@@ -7,12 +7,16 @@
 	margin: 1rem;
 }
 .greeting {
-	margin: 2rem;
-	color: aliceblue;
+	margin: 1rem 2rem;
+	color: black;
 	font-size: 34px;
-	text-shadow: 1px 1px 19px black;
+	text-shadow: 1px 1px 9px #00000062;
 }
 .list--box {
 	max-width: 1300px;
-	margin: 0 auto;
+	background-color: aliceblue;
+	border-radius: 15px;
+	margin: 2rem auto;
+	padding: 1rem;
+	box-shadow: 1px 1px 9px #0000004b;
 }
