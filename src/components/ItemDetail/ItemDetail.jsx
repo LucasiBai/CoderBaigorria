@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { CartCountContext } from "../../contexts/CartCountContext";
 
 import CartInstance from "../CartInstance/CartInstance";
 import Loader from "../Loader/Loader";
@@ -7,21 +8,14 @@ import "./ItemDetail.css";
 
 function ItemDetail({ id, title, img, price, detail, stock }) {
 	const [count, setCount] = useState(1);
-	const [cartItem, setCartItem] = useState({
-		itemId: 0,
-		count: 0,
-	});
+
+	const cartCountContext = useContext(CartCountContext);
 
 	const onCountChange = (count) => {
 		setCount(count);
 	};
-
 	const onAddToCart = () => {
-		const cartItem = {
-			itemId: id,
-			count: count,
-		};
-		setCartItem(cartItem);
+		cartCountContext[1](id, count);
 	};
 
 	useEffect(() => onCountChange(count), [count]);
@@ -52,12 +46,12 @@ function ItemDetail({ id, title, img, price, detail, stock }) {
 						</div>
 					</div>
 					<CartInstance
-						addToCart={cartItem}
 						stock={stock}
 						initial={1}
 						price={price}
 						count={count}
 						handleFunctions={[onCountChange, onAddToCart]}
+						addToCart={false}
 					/>
 				</React.Fragment>
 			)}

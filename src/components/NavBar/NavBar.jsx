@@ -28,7 +28,7 @@ export default function NavBar({ brandImg }) {
 				<li className="nav-item">
 					<Link to="/cart">
 						Cart
-						<CartWidget />
+						<CartWidget count={1} />
 					</Link>
 				</li>
 			</ul>

@@ -17,7 +17,7 @@ export default function CartInstance({
 }) {
 	return (
 		<div className="counter-box">
-			{!addToCart.itemId ? (
+			{!addToCart ? (
 				<React.Fragment>
 					<h3 className="detail-description__price" id="cart-instance__price">
 						${(price * count).toFixed(2)}
