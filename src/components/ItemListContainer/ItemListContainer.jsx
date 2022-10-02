@@ -18,15 +18,15 @@ const ItemListContainer = ({ greeting }) => {
 	// Obtenemos los datos
 	const getData = async () => {
 		setLoader(true);
+		let data;
 		if (!categoryId) {
 			setGreeting(greeting);
-			const data = await getProducts();
-			setData(data);
+			data = await getProducts();
 		} else {
 			setGreeting(categoryId[0].toUpperCase() + categoryId.slice(1));
-			const data = await getFilterProducts(categoryId);
-			setData(data);
+			data = await getFilterProducts(categoryId);
 		}
+		await setData(data);
 		setLoader(false);
 	};
 

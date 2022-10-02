@@ -24,6 +24,8 @@ const CartWidget = ({ name }) => {
 							padding: "0.5px 2.5px",
 							color: "#005047",
 							position: "absolute",
+							left: 14,
+							top: "-6px",
 						}}
 					>
 						{getCartCount()}
