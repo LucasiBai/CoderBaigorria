@@ -4,10 +4,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
 import "./CartWidget.css";
-import { CartCountContext } from "../../contexts/CartCountContext";
+import { cartContext } from "../../contexts/cartContext";
 
 const CartWidget = ({ name }) => {
-	const count = useContext(CartCountContext);
+	const count = useContext(cartContext);
 
 	return (
 		<span>

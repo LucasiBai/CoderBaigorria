@@ -1,42 +1,17 @@
 import "./App.css";
 
-import { useState, useEffect } from "react";
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import Header from "./components/Header";
 
-import { CartCountContext } from "./contexts/CartCountContext";
+import { CartContextProvider } from "./contexts/cartContext";
 
 function App() {
-	const [cartItems, setCartItems] = useState([]);
-
-	const [countCart, setCountCart] = useState(4);
-
-	const calculateCount = () => {
-		let count = cartItems.map((item) => item.count).reduce((a, b) => a + b, 0);
-
-		setCountCart(count);
-	};
-
-	useEffect(() => {
-		calculateCount();
-	}, [cartItems]);
-
-	const onAddToCart = (itemId, count) => {
-		const newItem = {
-			itemId: itemId,
-			count: count,
-		};
-
-		setCartItems([...cartItems, newItem]);
-	};
-
 	return (
-		<BrowserRouter>
-			<CartCountContext.Provider value={[countCart, onAddToCart]}>
+		<CartContextProvider>
+			<BrowserRouter>
 				<Header />
 				<Routes>
 					<Route
@@ -52,8 +27,8 @@ function App() {
 						}
 					/>
 				</Routes>
-			</CartCountContext.Provider>
-		</BrowserRouter>
+			</BrowserRouter>
+		</CartContextProvider>
 	);
 }
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { CartCountContext } from "../../contexts/CartCountContext";
+import { cartContext } from "../../contexts/cartContext";
 
 import CartInstance from "../CartInstance/CartInstance";
 import Loader from "../Loader/Loader";
@@ -9,7 +9,7 @@ import "./ItemDetail.css";
 function ItemDetail({ id, title, img, price, detail, stock }) {
 	const [count, setCount] = useState(1);
 
-	const cartCountContext = useContext(CartCountContext);
+	const cartCountContext = useContext(cartContext);
 
 	const onCountChange = (count) => {
 		setCount(count);
