@@ -7,14 +7,30 @@ import "./CartWidget.css";
 import { cartContext } from "../../contexts/cartContext";
 
 const CartWidget = ({ name }) => {
-	const count = useContext(cartContext);
+	const { getCartCount } = useContext(cartContext);
 
 	return (
 		<span>
 			{name}
 			<span className="cart-widget">
 				<FontAwesomeIcon icon={faCartPlus} />
-				{count[0] ? count[0] : ""}
+
+				{getCartCount() ? (
+					<span
+						style={{
+							fontSize: 10,
+							backgroundColor: "aliceblue",
+							borderRadius: 100,
+							padding: "0.5px 2.5px",
+							color: "#005047",
+							position: "absolute",
+						}}
+					>
+						{getCartCount()}
+					</span>
+				) : (
+					""
+				)}
 			</span>
 		</span>
 	);

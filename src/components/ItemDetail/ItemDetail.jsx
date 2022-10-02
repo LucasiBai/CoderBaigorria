@@ -6,52 +6,57 @@ import Loader from "../Loader/Loader";
 
 import "./ItemDetail.css";
 
-function ItemDetail({ id, title, img, price, detail, stock }) {
+function ItemDetail({ item }) {
 	const [count, setCount] = useState(1);
+	const [stock, setStock] = useState(item.stock);
 
-	const cartCountContext = useContext(cartContext);
+	const { addItem, getItemCount } = useContext(cartContext);
 
 	const onCountChange = (count) => {
 		setCount(count);
 	};
 	const onAddToCart = () => {
-		cartCountContext[1](id, count);
+		addItem(item, count);
+		setStock(stock - count);
+		setCount(1);
 	};
 
-	useEffect(() => onCountChange(count), [count]);
+	useEffect(
+		() => (onCountChange(count), setStock(item.stock - getItemCount(item.id))),
+		[count, item.stock],
+	);
 
 	return (
 		<article className="detail-item">
-			{!title ? (
+			{!item.title ? (
 				<Loader />
 			) : (
 				<React.Fragment>
 					<div className="detail-img">
-						<img src={img} alt={title} className="detail-img-item" />
+						<img src={item.img} alt={item.title} className="detail-img-item" />
 					</div>
 					<div className="detail-description">
-						<h2 className="detail-description__title">{title}</h2>
+						<h2 className="detail-description__title">{item.title}</h2>
 						<div className="detail-description__price-box">
-							<h4 className="detail-description__price">${price}</h4>
+							<h4 className="detail-description__price">${item.price}</h4>
 							<h4 className="detail-description__cuotas">
-								en 12x ${(price / 12).toFixed(2)}
+								en 12x ${((item.price * 1.25) / 12).toFixed(2)}
 							</h4>
 							<a href="">Ver los medios de pago</a>
 						</div>
 
 						<div className="detail-description__data">
 							<h4>Lo que tenés que saber de este producto</h4>
-							<ul>{detail}</ul>
+							<ul>{item.detail}</ul>
 							<a href="">Ver más características</a>
 						</div>
 					</div>
 					<CartInstance
 						stock={stock}
 						initial={1}
-						price={price}
+						price={item.price}
 						count={count}
 						handleFunctions={[onCountChange, onAddToCart]}
-						addToCart={false}
 					/>
 				</React.Fragment>
 			)}

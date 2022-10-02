@@ -22,14 +22,7 @@ function ItemDetailContainer() {
 
 	return (
 		<section className="item-detail-container">
-			<ItemDetail
-				id={product.id}
-				title={product.title}
-				img={product.img}
-				price={product.price}
-				detail={product.description}
-				stock={product.stock}
-			/>
+			<ItemDetail item={product} />
 		</section>
 	);
 }
