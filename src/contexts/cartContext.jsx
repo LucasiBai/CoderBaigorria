@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 const cartContext = createContext(0);
 
@@ -20,7 +20,6 @@ const CartContextProvider = ({ children }) => {
 			const newItem = { ...item, count };
 			setCart([...cart, newItem]);
 		}
-		console.log(cart);
 	};
 
 	// Eliminar item del carrito
@@ -48,6 +47,8 @@ const CartContextProvider = ({ children }) => {
 	const getCartCount = () => {
 		return cart.map((item) => item.count).reduce((a, b) => a + b, 0);
 	};
+
+	useEffect(() => console.log(cart), [cart]);
 
 	return (
 		<cartContext.Provider
