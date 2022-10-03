@@ -12,7 +12,7 @@ const CartContextProvider = ({ children }) => {
 	const addItem = (item, count) => {
 		if (isInCart(item.id)) {
 			const updatedCart = cart.map((prod) => {
-				prod.id === item.id ? (prod.count += count) : <></>;
+				prod.id === item.id && (prod.count += count);
 				return prod;
 			});
 			setCart(updatedCart);
