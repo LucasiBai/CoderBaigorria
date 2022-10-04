@@ -12,6 +12,7 @@ export default function ItemCount({
 
 	const changeItemCount = (operation) => {
 		const count = operation === "sum" ? itemCount + 1 : itemCount - 1;
+		setItemCount(count);
 		handleFunction(count);
 	};
 

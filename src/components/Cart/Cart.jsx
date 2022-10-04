@@ -4,7 +4,7 @@ import { cartContext } from "../../contexts/cartContext";
 import LandscapeCard from "../LandscapeCard/LandscapeCard";
 
 const Cart = () => {
-	const { cart, getTotalPrice, removeItem } = useContext(cartContext);
+	const { cart, getTotalPrice } = useContext(cartContext);
 
 	return (
 		<main>

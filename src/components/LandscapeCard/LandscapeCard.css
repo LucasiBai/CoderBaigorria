@@ -1,0 +1,8 @@
+.landscape-card--box {
+	display: flex;
+	justify-content: space-between;
+}
+
+.landscape-card--img img {
+	height: 200px;
+}

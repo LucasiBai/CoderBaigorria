@@ -54,6 +54,14 @@ const CartContextProvider = ({ children }) => {
 		return cart.reduce((acc, item) => acc + item.price * item.count, 0);
 	};
 
+	const changeItemCount = (id, count) => {
+		const updatedCart = cart.map((prod) => {
+			prod.id === id && (prod.count = count);
+			return prod;
+		});
+		setCart(updatedCart);
+	};
+
 	useEffect(() => console.log(cart), [cart]);
 
 	return (
@@ -67,6 +75,7 @@ const CartContextProvider = ({ children }) => {
 				getItemCount,
 				getCartCount,
 				getTotalPrice,
+				changeItemCount,
 			}}
 		>
 			{children}
