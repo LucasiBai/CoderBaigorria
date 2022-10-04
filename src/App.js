@@ -7,6 +7,9 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import Header from "./components/Header";
 
 import { CartContextProvider } from "./contexts/cartContext";
+import React from "react";
+import { Cart } from "./components/Cart/Cart";
+import NotFoundPage from "./components/NotFoundPage";
 
 function App() {
 	return (
@@ -20,12 +23,8 @@ function App() {
 					/>
 					<Route path="/item/:productId" element={<ItemDetailContainer />} />
 					<Route path="/category/:categoryId" element={<ItemListContainer />} />
-					<Route
-						path="/cart"
-						element={
-							<h1 style={{ margin: "2rem", color: "white" }}>Carrito</h1>
-						}
-					/>
+					<Route path="/cart" element={<Cart />} />
+					<Route path="*" element={<NotFoundPage />} />
 				</Routes>
 			</BrowserRouter>
 		</CartContextProvider>

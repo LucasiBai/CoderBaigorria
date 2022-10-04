@@ -45,7 +45,13 @@ const CartContextProvider = ({ children }) => {
 
 	// Retornar total de objetos en carrito
 	const getCartCount = () => {
-		return cart.map((item) => item.count).reduce((a, b) => a + b, 0);
+		return cart
+			.map((item) => item.count)
+			.reduce((acc, count) => acc + count, 0);
+	};
+
+	const getTotalPrice = () => {
+		return cart.reduce((acc, item) => acc + item.price * item.count, 0);
 	};
 
 	useEffect(() => console.log(cart), [cart]);
@@ -60,6 +66,7 @@ const CartContextProvider = ({ children }) => {
 				isInCart,
 				getItemCount,
 				getCartCount,
+				getTotalPrice,
 			}}
 		>
 			{children}
