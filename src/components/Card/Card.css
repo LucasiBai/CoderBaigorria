@@ -1,23 +1,17 @@
 .card {
 	width: 196px;
 	height: auto;
-	display: flex;
+	display: inline-block;
 	flex-direction: column;
 	align-items: center;
-	padding: 2rem 1rem;
+	padding: 2rem 0;
 	background-color: #41b3a5;
-	border-radius: 20px;
-	margin: 1rem;
-	box-shadow: 1px 1px 9px #00000082;
+	border-radius: 7px;
+	margin: 0.3rem;
+	box-shadow: 1px 1px 16px #00000017;
 	cursor: pointer;
-	display: inline-block;
 }
-.card--img {
-	width: 200px;
-	height: 200px;
-	object-fit: cover;
-	border-radius: 10px;
-}
+
 .card--title,
 .card--price,
 .card--description {
@@ -32,4 +26,11 @@
 }
 .card--description {
 	color: rgb(216, 224, 231);
+}
+
+.card--img {
+	width: 196px;
+	height: 179px;
+	object-fit: cover;
+	margin: 0;
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
 import { cartContext } from "../../contexts/cartContext";
 
 import CartInstance from "../CartInstance/CartInstance";
@@ -42,13 +43,13 @@ function ItemDetail({ item }) {
 							<h4 className="detail-description__cuotas">
 								en 12x ${((item.price * 1.25) / 12).toFixed(2)}
 							</h4>
-							<a href="">Ver los medios de pago</a>
+							<Link>Ver los medios de pago</Link>
 						</div>
 
 						<div className="detail-description__data">
 							<h4>Lo que tenés que saber de este producto</h4>
 							<ul>{item.detail}</ul>
-							<a href="">Ver más características</a>
+							<Link>Ver más características</Link>
 						</div>
 					</div>
 					<CartInstance

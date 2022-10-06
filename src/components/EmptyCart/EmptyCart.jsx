@@ -20,7 +20,7 @@ const EmptyCart = () => {
 				</span>
 			</h2>
 			<Link to="/" style={{ color: "grey" }}>
-				¡Te invitamos a ver nuestros productos!
+				¡Clickea aquí para ver nuestros productos!
 			</Link>
 		</div>
 	);
