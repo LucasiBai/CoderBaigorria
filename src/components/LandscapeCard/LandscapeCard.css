@@ -1,8 +1,12 @@
 .landscape-card--box {
 	display: flex;
 	justify-content: space-between;
+	background-color: rgb(102, 160, 212);
+	border-radius: 7px;
 }
 
 .landscape-card--img img {
-	height: 200px;
+	height: 352px;
+	width: 346px;
+	object-fit: cover;
 }
