@@ -49,17 +49,19 @@ const ItemListContainer = ({ greeting }) => {
 					<Loader />
 				</div>
 			) : (
-				<React.Fragment>
+				<div className="list--slider--box">
 					<MoveButton
+						className={"slider-left-button"}
 						direction={"left"}
 						handleSlide={() => slideCards("left")}
 					/>
 					<ItemList datos={data} />
 					<MoveButton
+						className={"slider-right-button"}
 						direction={"right"}
 						handleSlide={() => slideCards("right")}
 					/>
-				</React.Fragment>
+				</div>
 			)}
 		</section>
 	);

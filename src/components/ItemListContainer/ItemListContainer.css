@@ -26,3 +26,26 @@
 	padding: 1rem;
 	box-shadow: 1px 1px 9px #0000004b;
 }
+
+.list--slider--box {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.slider-left-button,
+.slider-right-button {
+	position: absolute;
+	opacity: 0.2;
+}
+.slider-left-button {
+	left: 0;
+}
+.slider-right-button {
+	right: 0;
+}
+
+.slider-left-button:hover,
+.slider-right-button:hover {
+	opacity: 1;
+}
