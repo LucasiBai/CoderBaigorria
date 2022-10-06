@@ -5,7 +5,7 @@
 	flex-direction: column;
 	align-items: center;
 	padding: 2rem 0;
-	background-color: #41b3a5;
+	background-color: white;
 	border-radius: 7px;
 	margin: 0.3rem;
 	box-shadow: 1px 1px 16px #00000017;
@@ -15,7 +15,7 @@
 .card--title,
 .card--price,
 .card--description {
-	color: aliceblue;
+	color: rgb(22, 22, 22);
 }
 .card--item {
 	margin: 0.2rem;
@@ -25,12 +25,13 @@
 	font-size: 20px;
 }
 .card--description {
-	color: rgb(216, 224, 231);
+	color: rgb(129, 129, 129);
 }
 
 .card--img {
 	width: 196px;
 	height: 179px;
-	object-fit: cover;
+	object-fit: contain;
 	margin: 0;
+	background-color: white;
 }

@@ -2,7 +2,7 @@ import Card from "../Card/Card";
 
 const ItemList = ({ datos }) => {
 	return (
-		<div className="list--items">
+		<div className="list--items" id="slider">
 			{datos.map((data) => (
 				<Card
 					key={data.id}

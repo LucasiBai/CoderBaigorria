@@ -3,6 +3,8 @@
 	flex-direction: row;
 	white-space: nowrap;
 	overflow-x: scroll;
+	scrollbar-width: none;
+	scroll-behavior: smooth;
 }
 .list--items::-webkit-scrollbar {
 	display: none;

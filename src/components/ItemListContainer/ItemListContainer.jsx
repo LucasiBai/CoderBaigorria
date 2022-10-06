@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import { useParams } from "react-router-dom";
 
@@ -7,6 +7,7 @@ import "./ItemListContainer.css";
 
 import getProducts, { getFilterProducts } from "../../services/mockAPI";
 import Loader from "../Loader/Loader";
+import MoveButton from "../MoveButton/MoveButton";
 
 const ItemListContainer = ({ greeting }) => {
 	const [data, setData] = useState([]);
@@ -30,6 +31,12 @@ const ItemListContainer = ({ greeting }) => {
 		setLoader(false);
 	};
 
+	const slideCards = (direction) => {
+		const slider = document.getElementById("slider");
+		slider.scrollLeft =
+			direction === "right" ? slider.scrollLeft + 617 : slider.scrollLeft - 617;
+	};
+
 	useEffect(() => {
 		getData();
 	}, [categoryId]);
@@ -42,7 +49,17 @@ const ItemListContainer = ({ greeting }) => {
 					<Loader />
 				</div>
 			) : (
-				<ItemList datos={data} />
+				<React.Fragment>
+					<MoveButton
+						direction={"left"}
+						handleSlide={() => slideCards("left")}
+					/>
+					<ItemList datos={data} />
+					<MoveButton
+						direction={"right"}
+						handleSlide={() => slideCards("right")}
+					/>
+				</React.Fragment>
 			)}
 		</section>
 	);
