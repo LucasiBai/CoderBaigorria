@@ -1,12 +1,50 @@
 .landscape-card--box {
 	display: flex;
 	justify-content: space-between;
-	background-color: rgb(102, 160, 212);
+	background-color: white;
 	border-radius: 7px;
+	margin: 0.2rem;
+	max-width: 1200px;
+	box-shadow: 1px 1px 16px #00000017;
 }
 
+.landscape-card--img {
+	display: flex;
+	justify-content: center;
+}
 .landscape-card--img img {
-	height: 352px;
-	width: 346px;
+	height: 220px;
+	width: 220px;
 	object-fit: cover;
+	margin-left: 0.5rem;
+}
+
+.landscape-card--detail {
+	margin: 1.5rem 0 0 1.5rem;
+}
+
+.landscape-card--detail p {
+	color: rgb(78, 166, 238);
+}
+
+.landscape-card--detail h3 {
+	font-size: 24px;
+	font-weight: 500;
+	color: black;
+}
+
+.landscape-card--detail h4 {
+	margin: 1.5rem 0 0.3rem 0;
+	font-size: 25px;
+	font-weight: 100;
+}
+
+.landscape-card--detail h5 {
+	font-weight: 100;
+	color: #747474;
+	font-size: 15px;
+}
+
+.landscape-card--button {
+	margin: 1rem;
 }

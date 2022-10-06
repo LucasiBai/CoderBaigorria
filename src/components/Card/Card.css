@@ -10,6 +10,7 @@
 	margin: 1rem;
 	box-shadow: 1px 1px 9px #00000082;
 	cursor: pointer;
+	display: inline-block;
 }
 .card--img {
 	width: 200px;

@@ -1,5 +1,7 @@
 import { useContext } from "react";
 
+import { Link } from "react-router-dom";
+
 import { faHeart, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 import { cartContext } from "../../contexts/cartContext";
@@ -22,14 +24,20 @@ const LandscapeCard = ({ item, mode }) => {
 		<article className="landscape-card--box">
 			<div style={{ display: "flex" }}>
 				<div className="landscape-card--img">
-					<img src={item.img} alt={item.title} />
+					<Link to={`/item/${item.id}`}>
+						<img src={item.img} alt={item.title} />
+					</Link>
 				</div>
 				<div className="landscape-card--detail">
-					<h3>{item.title}</h3>
-					{!cartCard && <p>Stars</p>}
-					<h4>{item.price}</h4>
-					{!cartCard && item.stock < 10 ? (
-						<h4>¡Últimos disponibles!</h4>
+					<Link to={`/item/${item.id}`}>
+						<h3>{item.title}</h3>
+						{!cartCard && <p>Stars</p>}
+					</Link>
+					<h4 style={{ marginBottom: !cartCard ? "0.25rem" : "0.5rem" }}>
+						${item.price}
+					</h4>
+					{!cartCard && item.stock < 7 ? (
+						<h5>¡Últimos disponibles!</h5>
 					) : (
 						<ItemCount
 							count={item.count}
