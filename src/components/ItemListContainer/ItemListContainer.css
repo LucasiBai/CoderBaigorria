@@ -4,6 +4,7 @@
 	overflow-x: scroll;
 	scrollbar-width: none;
 	scroll-behavior: smooth;
+	height: 360px;
 }
 .list--items::-webkit-scrollbar {
 	display: none;

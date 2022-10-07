@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 import { useParams } from "react-router-dom";
 
@@ -17,7 +17,7 @@ const ItemListContainer = ({ greeting }) => {
 	const { categoryId } = useParams();
 
 	// Obtenemos los datos
-	const getData = async () => {
+	const getData = useCallback(async () => {
 		setLoader(true);
 		let data;
 		if (!categoryId) {
@@ -29,7 +29,7 @@ const ItemListContainer = ({ greeting }) => {
 		}
 		await setData(data);
 		setLoader(false);
-	};
+	}, [categoryId, greeting]);
 
 	const slideCards = (direction) => {
 		const slider = document.getElementById("slider");
@@ -41,7 +41,7 @@ const ItemListContainer = ({ greeting }) => {
 
 	useEffect(() => {
 		getData();
-	}, [categoryId]);
+	}, [categoryId, getData]);
 
 	return (
 		<section className="list--box">

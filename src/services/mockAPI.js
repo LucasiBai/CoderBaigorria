@@ -11,7 +11,8 @@ const products = [
 	{
 		id: 2,
 		title: "Lampara Colgante Vintage",
-		description: "Occupational exposure to extreme temperature",
+		description:
+			"Occupational exposure to extreme temperature asdsadsadfasmfñlsamfpsafmsañlfmsañlfmasñfsamfñlasmfsañlfmasñlfmsañfsamfñlamfñlmasñlfsamñlfsamfasñlasfmñl",
 		price: 7480.83,
 		img: "https://http2.mlstatic.com/D_NQ_NP_887880-MLA49215970688_022022-O.webp",
 		stock: 12,

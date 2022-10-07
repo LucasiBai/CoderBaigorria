@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { Link } from "react-router-dom";
+import CardDescription from "../CardDescription/CardDescription";
 
 import "./Card.css";
 
@@ -18,9 +19,7 @@ export default function Card({ id, title, img, description, price }) {
 				<img src={img} alt={title} className="card--img card--item" />
 				<h3 className="card--title card--item">{title}</h3>
 				<h4 className="card--item card--price">${price}</h4>
-				{overCard && (
-					<p className="card--description card--item">{description}</p>
-				)}
+				{overCard && <CardDescription text={description} />}
 			</Link>
 		</article>
 	);
