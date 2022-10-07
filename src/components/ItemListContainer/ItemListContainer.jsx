@@ -33,8 +33,10 @@ const ItemListContainer = ({ greeting }) => {
 
 	const slideCards = (direction) => {
 		const slider = document.getElementById("slider");
-		slider.scrollLeft =
-			direction === "right" ? slider.scrollLeft + 617 : slider.scrollLeft - 617;
+
+		direction === "right"
+			? (slider.scrollLeft += 617)
+			: (slider.scrollLeft -= 617);
 	};
 
 	useEffect(() => {
@@ -51,7 +53,7 @@ const ItemListContainer = ({ greeting }) => {
 			) : (
 				<div className="list--slider--box">
 					<MoveButton
-						className={"slider-left-button"}
+						className={`slider-left-button `}
 						direction={"left"}
 						handleSlide={() => slideCards("left")}
 					/>

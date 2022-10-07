@@ -1,7 +1,6 @@
 .list--items {
 	display: flex;
 	flex-direction: row;
-	white-space: nowrap;
 	overflow-x: scroll;
 	scrollbar-width: none;
 	scroll-behavior: smooth;
@@ -48,4 +47,8 @@
 .slider-left-button:hover,
 .slider-right-button:hover {
 	opacity: 1;
+}
+
+.hidden {
+	display: none;
 }

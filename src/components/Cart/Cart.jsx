@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import { cartContext } from "../../contexts/cartContext";
 import ItemColumnList from "../ItemColumnList/ItemColumnList";
 import EmptyCart from "../EmptyCart/EmptyCart";
+import Card from "../Card/Card";
 
 const Cart = () => {
 	const { cart, getTotalPrice, getCartCount } = useContext(cartContext);
