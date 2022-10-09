@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 import "./ItemListContainer.css";
 
-import getProducts, { getFilterProducts } from "../../services/mockAPI";
+import { getProducts, getFilterProducts } from "../../services/firestore";
 import Loader from "../Loader/Loader";
 import MoveButton from "../MoveButton/MoveButton";
 
@@ -17,19 +17,19 @@ const ItemListContainer = ({ greeting }) => {
 	const { categoryId } = useParams();
 
 	// Obtenemos los datos
-	const getData = useCallback(async () => {
-		setLoader(true);
-		let data;
-		if (!categoryId) {
-			setGreeting(greeting);
-			data = await getProducts();
-		} else {
-			setGreeting(categoryId[0].toUpperCase() + categoryId.slice(1));
-			data = await getFilterProducts(categoryId);
-		}
-		await setData(data);
-		setLoader(false);
-	}, [categoryId, greeting]);
+	// const getData = useCallback(async () => {
+	// 	setLoader(true);
+	// 	let data;
+	// 	if (!categoryId) {
+	// 		setGreeting(greeting);
+	// 		data = await getProducts();
+	// 	} else {
+	// 		setGreeting(categoryId[0].toUpperCase() + categoryId.slice(1));
+	// 		data = await getFilterProducts(categoryId);
+	// 	}
+	// 	await setData(data);
+	// 	setLoader(false);
+	// }, [categoryId, greeting]);
 
 	const slideCards = (direction) => {
 		const slider = document.getElementById("slider");
@@ -40,8 +40,15 @@ const ItemListContainer = ({ greeting }) => {
 	};
 
 	useEffect(() => {
-		getData();
-	}, [categoryId, getData]);
+		setGreeting(greeting);
+		getProducts(setData);
+		setLoader(false);
+	}, [
+		categoryId,
+		greeting,
+		data,
+		// , getData
+	]);
 
 	return (
 		<section className="list--box">

@@ -1,6 +1,13 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import {
+	collection,
+	doc,
+	getFirestore,
+	query,
+	where,
+	getDocs,
+} from "firebase/firestore";
 // Your web app's Firebase configuration
 const firebaseConfig = {
 	apiKey: "AIzaSyDLibewxZ5hu0-M612Co7DCzj4Ov-koyNE",
@@ -15,4 +22,25 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const firestore = getFirestore(app);
 
-export { firestore };
+const getProducts = async (hookCallback) => {
+	const resQuery = collection(firestore, "productos");
+	const resDocs = await getDocs(resQuery);
+
+	hookCallback(resDocs.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+};
+const getFilterProducts = async (hookCallback, category) => {
+	const resQuery = query(
+		collection(firestore, "productos"),
+		where("category", "==", category),
+	);
+	const resDocs = await getDocs(resQuery);
+
+	hookCallback(resDocs.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+};
+const getProduct = async (hookCallback, productId) => {
+	const resQuery = doc(firestore, "productos", productId);
+	const resDoc = await getDocs(resQuery);
+	hookCallback({ id: resDoc.id, ...resDoc.data() });
+};
+
+export { firestore, getProduct, getFilterProducts, getProducts };
