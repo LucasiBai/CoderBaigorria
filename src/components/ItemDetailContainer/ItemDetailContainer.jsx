@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 import { useParams } from "react-router-dom";
 
 import "./ItemDetailContainer.css";
 
-import { getProduct } from "../../services/mockAPI";
+import { getProduct } from "../../services/firestore";
 import ItemDetail from "../ItemDetail/ItemDetail";
 
 function ItemDetailContainer() {
@@ -12,13 +12,14 @@ function ItemDetailContainer() {
 
 	const { productId } = useParams();
 
-	useEffect(() => {
-		const getItem = async () => {
-			const res = await getProduct(Number(productId));
-			setProduct(res);
-		};
-		getItem();
+	const getItem = useCallback(async () => {
+		const res = await getProduct(productId);
+		setProduct(res);
 	}, [productId]);
+
+	useEffect(() => {
+		getItem();
+	}, [productId, getItem]);
 
 	return (
 		<section className="item-detail-container">

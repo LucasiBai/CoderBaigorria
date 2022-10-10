@@ -7,6 +7,7 @@ import {
 	query,
 	where,
 	getDocs,
+	getDoc,
 } from "firebase/firestore";
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -22,25 +23,29 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const firestore = getFirestore(app);
 
-const getProducts = async (hookCallback) => {
+const getProducts = async () => {
 	const resQuery = collection(firestore, "productos");
-	const resDocs = await getDocs(resQuery);
+	const snapshot = await getDocs(resQuery);
 
-	hookCallback(resDocs.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+	const data = snapshot.docs.map((item) => ({ id: item.id, ...item.data() }));
+	return data;
 };
-const getFilterProducts = async (hookCallback, category) => {
+const getFilterProducts = async (category) => {
 	const resQuery = query(
 		collection(firestore, "productos"),
 		where("category", "==", category),
 	);
-	const resDocs = await getDocs(resQuery);
+	const snapshot = await getDocs(resQuery);
 
-	hookCallback(resDocs.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+	const data = snapshot.docs.map((item) => ({ id: item.id, ...item.data() }));
+	return data;
 };
-const getProduct = async (hookCallback, productId) => {
+const getProduct = async (productId) => {
 	const resQuery = doc(firestore, "productos", productId);
-	const resDoc = await getDocs(resQuery);
-	hookCallback({ id: resDoc.id, ...resDoc.data() });
+	const snapshot = await getDoc(resQuery);
+
+	const data = { id: snapshot.id, ...snapshot.data() };
+	return data;
 };
 
 export { firestore, getProduct, getFilterProducts, getProducts };
