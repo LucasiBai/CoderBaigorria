@@ -8,6 +8,8 @@ import {
 	where,
 	getDocs,
 	getDoc,
+	addDoc,
+	updateDoc,
 } from "firebase/firestore";
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -22,6 +24,8 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const firestore = getFirestore(app);
+
+// Métodos GET
 
 const getProducts = async () => {
 	const resQuery = collection(firestore, "productos");
@@ -48,4 +52,20 @@ const getProduct = async (productId) => {
 	return data;
 };
 
-export { firestore, getProduct, getFilterProducts, getProducts };
+// Métodos POST y PUT
+
+const updateStock = (products) => {
+	products.forEach(({ id, stock, count }) => {
+		const query = doc(firestore, "productos", id);
+		updateDoc(query, { stock: stock - count });
+	});
+};
+
+const sendOrder = async (orderData) => {
+	const resQuery = collection(firestore, "orders");
+	const response = await addDoc(resQuery, orderData);
+	updateStock(orderData.items);
+	return response.id;
+};
+
+export { firestore, getProduct, getFilterProducts, getProducts, sendOrder };

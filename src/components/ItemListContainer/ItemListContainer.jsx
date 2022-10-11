@@ -23,7 +23,6 @@ const ItemListContainer = ({ greeting }) => {
 		if (!categoryId) {
 			setGreeting(greeting);
 			data = await getProducts();
-			console.log(data);
 		} else {
 			setGreeting(categoryId[0].toUpperCase() + categoryId.slice(1));
 			data = await getFilterProducts(categoryId);
