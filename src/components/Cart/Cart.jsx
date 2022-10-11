@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 import { cartContext } from "../../contexts/cartContext";
 
@@ -7,12 +7,15 @@ import { sendOrder } from "../../services/firestore";
 import ItemColumnList from "../ItemColumnList/ItemColumnList";
 import EmptyCart from "../EmptyCart/EmptyCart";
 import GhostButton from "../GhostButton/GhostButton";
+import { async } from "@firebase/util";
 
 const Cart = () => {
+	const [orderSended, setOrderSended] = useState(false);
+
 	const { cart, getTotalPrice, getCartCount, clearCart } =
 		useContext(cartContext);
 
-	const makeOrder = () => {
+	const makeOrder = async () => {
 		const order = {
 			buyer: {
 				name: "Lucas Ignacio",
@@ -22,9 +25,23 @@ const Cart = () => {
 			items: [...cart],
 			total: getTotalPrice(),
 		};
-		sendOrder(order);
+
+		const orderId = await sendOrder(order);
+
+		setOrderSended(orderId);
 		clearCart();
 	};
+
+	if (orderSended) {
+		return (
+			<main>
+				<section>
+					<h1>Gracias por tu compra!</h1>
+					<h5>Número de Orden {orderSended}</h5>
+				</section>
+			</main>
+		);
+	}
 
 	return (
 		<main>

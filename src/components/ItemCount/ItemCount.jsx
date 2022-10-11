@@ -11,7 +11,13 @@ export default function ItemCount({
 	const [itemCount, setItemCount] = useState(initial);
 
 	const changeItemCount = (operation) => {
-		const count = operation === "sum" ? itemCount + 1 : itemCount - 1;
+		const count =
+			operation === "sum" && stock > itemCount
+				? itemCount + 1
+				: operation === "rest" && initial < itemCount
+				? itemCount - 1
+				: itemCount;
+
 		setItemCount(count);
 		handleFunction(count);
 	};

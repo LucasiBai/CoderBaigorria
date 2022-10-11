@@ -21,6 +21,10 @@ function ItemDetailContainer() {
 		getItem();
 	}, [productId, getItem]);
 
+	if (typeof product === "string") {
+		return <section className="item-detail-container">{product}</section>;
+	}
+
 	return (
 		<section className="item-detail-container">
 			<ItemDetail item={product} />

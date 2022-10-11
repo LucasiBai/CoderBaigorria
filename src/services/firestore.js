@@ -49,6 +49,9 @@ const getProduct = async (productId) => {
 	const snapshot = await getDoc(resQuery);
 
 	const data = { id: snapshot.id, ...snapshot.data() };
+	if (!data.title) {
+		return "El producto solicitado no existe.";
+	}
 	return data;
 };
 
