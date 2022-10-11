@@ -25,7 +25,9 @@ const Cart = () => {
 						<ItemColumnList items={cart} />
 						<h3>
 							El total es{" "}
-							<span style={{ fontSize: 35 }}>${getTotalPrice()}</span>
+							<span style={{ fontSize: 35 }}>
+								${new Intl.NumberFormat().format(getTotalPrice().toFixed(2))}
+							</span>
 						</h3>
 					</div>
 				)}

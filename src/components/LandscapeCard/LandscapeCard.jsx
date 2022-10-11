@@ -34,7 +34,7 @@ const LandscapeCard = ({ item, mode }) => {
 						{!cartCard && <p>Stars</p>}
 					</Link>
 					<h4 style={{ marginBottom: !cartCard ? "0.25rem" : "0.5rem" }}>
-						${item.price}
+						$ {new Intl.NumberFormat().format(item.price)}
 					</h4>
 					{!cartCard && item.stock < 7 ? (
 						<h5>¡Últimos disponibles!</h5>

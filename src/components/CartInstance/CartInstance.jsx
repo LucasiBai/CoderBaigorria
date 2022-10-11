@@ -17,7 +17,7 @@ export default function CartInstance({
 	return (
 		<div className="counter-box">
 			<h3 className="detail-description__price" id="cart-instance__price">
-				${(price * count).toFixed(2)}
+				${new Intl.NumberFormat().format((price * count).toFixed(2))}
 			</h3>
 			<div>
 				<h3>Cantidad</h3>

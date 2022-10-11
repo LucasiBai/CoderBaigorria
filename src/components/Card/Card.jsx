@@ -19,7 +19,9 @@ export default function Card({ id, title, img, description, price }) {
 			<Link to={productURL}>
 				<img src={img} alt={title} className="card--img card--item" />
 
-				<h4 className="card--item card--price">${price}</h4>
+				<h4 className="card--item card--price">
+					$ {new Intl.NumberFormat().format(price)}
+				</h4>
 				{overCard && <CardDescription text={description} />}
 			</Link>
 		</article>

@@ -39,9 +39,14 @@ function ItemDetail({ item }) {
 					<div className="detail-description">
 						<h2 className="detail-description__title">{item.title}</h2>
 						<div className="detail-description__price-box">
-							<h4 className="detail-description__price">${item.price}</h4>
+							<h4 className="detail-description__price">
+								${new Intl.NumberFormat().format(item.price)}
+							</h4>
 							<h4 className="detail-description__cuotas">
-								en 12x ${((item.price * 1.25) / 12).toFixed(2)}
+								en 12x $
+								{new Intl.NumberFormat().format(
+									((item.price * 1.25) / 12).toFixed(2),
+								)}
 							</h4>
 							<Link>Ver los medios de pago</Link>
 						</div>
