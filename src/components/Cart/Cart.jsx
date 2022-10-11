@@ -9,7 +9,8 @@ import EmptyCart from "../EmptyCart/EmptyCart";
 import GhostButton from "../GhostButton/GhostButton";
 
 const Cart = () => {
-	const { cart, getTotalPrice, getCartCount } = useContext(cartContext);
+	const { cart, getTotalPrice, getCartCount, clearCart } =
+		useContext(cartContext);
 
 	const makeOrder = () => {
 		const order = {
@@ -22,6 +23,7 @@ const Cart = () => {
 			total: getTotalPrice(),
 		};
 		sendOrder(order);
+		clearCart();
 	};
 
 	return (

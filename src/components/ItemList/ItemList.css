@@ -21,11 +21,8 @@
 }
 .list--box {
 	max-width: 1300px;
-	background-color: aliceblue;
-	border-radius: 15px;
 	margin: 2rem auto;
 	padding: 1rem;
-	box-shadow: 1px 1px 9px #0000004b;
 }
 
 .list--slider--box {
@@ -38,6 +35,12 @@
 .slider-right-button {
 	position: absolute;
 	opacity: 0.2;
+	transition: box-shadow 0.2s ease;
+}
+
+.slider-left-button:hover,
+.slider-right-button:hover {
+	box-shadow: 1px 1px 10px #0000002b;
 }
 .slider-left-button {
 	left: 0;
