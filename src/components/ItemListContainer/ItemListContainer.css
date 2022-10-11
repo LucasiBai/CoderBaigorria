@@ -13,10 +13,11 @@
 	margin: 1rem;
 }
 .greeting {
-	margin: 1rem 2rem;
-	color: black;
-	font-size: 34px;
-	text-shadow: 1px 1px 9px #00000062;
+	margin: 0.2rem 0.2rem;
+	color: #4a4a4a;
+	font-size: 26px;
+	font-weight: 100;
+	letter-spacing: 0.2px;
 }
 .list--box {
 	max-width: 1300px;

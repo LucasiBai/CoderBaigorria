@@ -14,10 +14,11 @@ export default function Card({ id, title, img, description, price }) {
 			className="card"
 			onMouseOver={() => setOverCard(true)}
 			onMouseLeave={() => setOverCard(false)}
+			style={{ height: overCard && 243 }}
 		>
 			<Link to={productURL}>
 				<img src={img} alt={title} className="card--img card--item" />
-				<h3 className="card--title card--item">{title}</h3>
+
 				<h4 className="card--item card--price">${price}</h4>
 				{overCard && <CardDescription text={description} />}
 			</Link>
