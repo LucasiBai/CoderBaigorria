@@ -1,0 +1,22 @@
+.search-bar {
+	height: 22px;
+	width: 341px;
+	border-radius: 7px;
+	border: none;
+	outline: none;
+	padding: 0.3rem;
+}
+
+.search-bar--box button {
+	border: none;
+}
+
+.search-bar--box hr {
+	border-style: solid;
+	color: #0000001f;
+	width: 1px;
+	border: 0;
+	height: 70%;
+	background: #36363638;
+	background-image: linear-gradient(to right, #cccccc3d, #33333329, #cccccc61);
+}
