@@ -7,7 +7,6 @@ import { sendOrder } from "../../services/firestore";
 import ItemColumnList from "../ItemColumnList/ItemColumnList";
 import EmptyCart from "../EmptyCart/EmptyCart";
 import GhostButton from "../GhostButton/GhostButton";
-import { async } from "@firebase/util";
 
 const Cart = () => {
 	const [orderSended, setOrderSended] = useState(false);

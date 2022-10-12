@@ -6,7 +6,7 @@ import "./ItemList.css";
 
 const ItemList = ({ datos, greeting }) => {
 	const slideCards = (direction) => {
-		const slider = document.getElementById("slider");
+		const slider = document.getElementById(`slider${greeting}`);
 
 		direction === "right"
 			? (slider.scrollLeft += 617)
@@ -23,7 +23,7 @@ const ItemList = ({ datos, greeting }) => {
 					direction={"left"}
 					handleSlide={() => slideCards("left")}
 				/>
-				<div className="list--items" id="slider">
+				<div className="list--items" id={`slider${greeting}`}>
 					{datos.map((data) => (
 						<Card
 							key={data.id}

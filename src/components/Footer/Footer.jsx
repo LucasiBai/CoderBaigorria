@@ -13,11 +13,12 @@ const Footer = ({ brand, address, backColor }) => {
 				display: "flex",
 				backgroundColor: backColor,
 				justifyContent: "center",
+				marginTop: "auto",
 			}}
 		>
 			<div
 				style={{
-					width: "1400px",
+					width: "1200px",
 					display: "flex",
 					justifyContent: "space-around",
 					alignItems: "center",
@@ -30,9 +31,9 @@ const Footer = ({ brand, address, backColor }) => {
 						style={{ display: "flex", flexDirection: "column" }}
 					>
 						<input type="text" placeholder="Nombre" />
-						<input type="text" placeholder="Email" />
+						<input type="email" placeholder="Email" />
 						<textarea name="" id="" cols="30" rows="10" placeholder="Mensaje" />
-						<input type="submit" value="Enviar" />
+						<input type="submit" value="Enviar" id="foo-submit" />
 					</form>
 				</div>
 				<hr />

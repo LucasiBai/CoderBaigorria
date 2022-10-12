@@ -39,3 +39,21 @@ footer hr {
 	background: #36363638;
 	background-image: linear-gradient(to right, #cccccc3d, #33333329, #cccccc61);
 }
+
+footer form input,
+footer form textarea {
+	padding: 0.5em;
+	border-radius: 7px;
+	border: none;
+	margin: 0.25rem 0;
+	outline: none;
+}
+
+footer form textarea {
+	resize: none;
+	height: 100px;
+}
+
+#foo-submit {
+	cursor: pointer;
+}
