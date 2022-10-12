@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
 import ProfileButton from "../ProfileButton/ProfileButton";
 import SearchBar from "../SearchBar/SearchBar";
+import CustomSelect from "../CustomSelect/CustomSelect";
 
 export default function NavBar({ brandImg }) {
 	return (
@@ -16,28 +17,26 @@ export default function NavBar({ brandImg }) {
 			</div>
 
 			<ul className="nav--items">
-				<li>
-					<SearchBar />
-				</li>
+				<li>{/* <SearchBar /> */}</li>
 				<li className="nav-item">
 					<Link to="/">Principal</Link>
 				</li>
 				<li className="nav-item">
-					<Link>Categorias</Link>
+					<CustomSelect
+						title="Categorias"
+						items={[
+							{ title: "Jardín", link: "/category/jardin" },
+							{ title: "Hogar", link: "/category/hogar" },
+							{ title: "Habitación", link: "/category/habitacion" },
+						]}
+					/>
 				</li>
 				<li className="nav-item">
-					<Link>Favoritos</Link>
+					<div style={{ display: "flex", flexDirection: "column" }}>
+						<Link>Favoritos</Link>
+					</div>
 				</li>
 
-				{/* <li className="nav-item">
-					<Link to="/category/jardin">Jardín</Link>
-				</li>
-				<li className="nav-item">
-					<Link to="/category/hogar">Hogar</Link>
-				</li>
-				<li className="nav-item">
-					<Link to="/category/habitacion">Habitación</Link>
-				</li> */}
 				<li className="nav-item">
 					<Link to="/cart">
 						<CartWidget name={"Cart"} />

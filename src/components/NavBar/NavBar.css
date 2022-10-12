@@ -32,8 +32,3 @@ nav {
 .nav-item {
 	padding: 1rem;
 }
-.nav-item:hover {
-	background-color: #01352f;
-	border-radius: 10px;
-	color: rgb(209, 215, 221);
-}

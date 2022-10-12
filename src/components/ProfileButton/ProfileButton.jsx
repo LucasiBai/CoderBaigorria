@@ -1,10 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
 
+import "./ProfileButton.css";
+
 const ProfileButton = ({ accountData }) => {
 	return (
-		<span style={{ display: "flex", alignItems: "center", color: "white" }}>
-			<FontAwesomeIcon icon={faBell} />
+		<span
+			style={{ display: "flex", alignItems: "center", color: "white" }}
+			className="profile-button"
+		>
+			<span>
+				<FontAwesomeIcon icon={faBell} />
+			</span>
 			<img
 				src="https://images.unsplash.com/photo-1630208232589-e42b29428b19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=769&q=80"
 				alt="gpñ"
