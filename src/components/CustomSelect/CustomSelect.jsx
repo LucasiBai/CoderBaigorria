@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Children, useState } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -7,7 +7,7 @@ import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 import "./CustomSelect.css";
 
-const CustomSelect = ({ items, title }) => {
+const CustomSelect = ({ items, children }) => {
 	const [isOver, setIsOver] = useState(false);
 
 	const mouseOver = (bool) => {
@@ -23,7 +23,7 @@ const CustomSelect = ({ items, title }) => {
 			className="custom-select"
 		>
 			<p className="custom-select--title">
-				{title}{" "}
+				{children}{" "}
 				<span style={{ fontSize: 10 }}>
 					<FontAwesomeIcon icon={faAngleDown} />
 				</span>

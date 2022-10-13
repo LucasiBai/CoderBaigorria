@@ -28,6 +28,7 @@ nav {
 	display: flex;
 	flex-direction: row;
 	margin: 0 1rem;
+	align-items: center;
 }
 .nav-item {
 	padding: 1rem;

@@ -23,7 +23,6 @@ export default function NavBar({ brandImg }) {
 				</li>
 				<li className="nav-item">
 					<CustomSelect
-						title="Categorias"
 						items={[
 							{
 								title: "Jardín",
@@ -32,7 +31,9 @@ export default function NavBar({ brandImg }) {
 							{ title: "Hogar", link: "/category/hogar" },
 							{ title: "Habitación", link: "/category/habitacion" },
 						]}
-					/>
+					>
+						Categorias
+					</CustomSelect>
 				</li>
 				<li className="nav-item">
 					<div style={{ display: "flex", flexDirection: "column" }}>
@@ -42,7 +43,7 @@ export default function NavBar({ brandImg }) {
 
 				<li className="nav-item">
 					<Link to="/cart">
-						<CartWidget name={"Cart"} />
+						<CartWidget name={"Carrito"} />
 					</Link>
 				</li>
 				<li className="nav-item">
