@@ -7,14 +7,18 @@ import { sendOrder } from "../../services/firestore";
 import ItemColumnList from "../ItemColumnList/ItemColumnList";
 import EmptyCart from "../EmptyCart/EmptyCart";
 import GhostButton from "../GhostButton/GhostButton";
+import Checkout from "../Checkout/Checkout";
+import Loader from "../Loader/Loader";
 
 const Cart = () => {
+	const [isLoading, setIsLoading] = useState(false);
 	const [orderSended, setOrderSended] = useState(false);
 
 	const { cart, getTotalPrice, getCartCount, clearCart } =
 		useContext(cartContext);
 
 	const makeOrder = async () => {
+		setIsLoading(true);
 		const order = {
 			buyer: {
 				name: "Lucas Ignacio",
@@ -27,18 +31,20 @@ const Cart = () => {
 
 		const orderId = await sendOrder(order);
 
-		setOrderSended(orderId);
+		setOrderSended({ ...order, orderId });
 		clearCart();
+		setIsLoading(false);
 	};
 
 	if (orderSended) {
+		return <Checkout orderData={orderSended} />;
+	}
+
+	if (isLoading) {
 		return (
-			<main>
-				<section>
-					<h1>Gracias por tu compra!</h1>
-					<h5>Número de Orden {orderSended}</h5>
-				</section>
-			</main>
+			<section className="list--box">
+				<Loader />
+			</section>
 		);
 	}
 

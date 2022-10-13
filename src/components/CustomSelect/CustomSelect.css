@@ -9,6 +9,22 @@
 	z-index: 1;
 }
 
+.triangulo-equilatero-bottom {
+	width: 0;
+	height: 0;
+	border-right: 10px solid transparent;
+	border-top: 10px solid transparent;
+	border-left: 10px solid transparent;
+	border-bottom: 10px solid rgb(65, 65, 65);
+	position: absolute;
+	top: -18px;
+	left: 74px;
+}
+
+.custom-select {
+	padding: 3px;
+}
+
 .custom-select-box a {
 	padding: 0.5rem 5rem 0.5rem 2rem;
 }
@@ -20,4 +36,5 @@
 .custom-select--title {
 	cursor: pointer;
 	color: aliceblue;
+	word-spacing: -2px;
 }

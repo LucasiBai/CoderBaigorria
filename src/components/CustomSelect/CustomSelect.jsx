@@ -12,8 +12,8 @@ const CustomSelect = ({ items, title }) => {
 
 	const mouseOver = (bool) => {
 		setTimeout(() => {
-			setIsOver(bool ? true : false);
-		}, 300);
+			setIsOver(bool);
+		}, 370);
 	};
 
 	return (
@@ -24,15 +24,16 @@ const CustomSelect = ({ items, title }) => {
 		>
 			<p className="custom-select--title">
 				{title}{" "}
-				<span style={{ fontSize: 11 }}>
+				<span style={{ fontSize: 10 }}>
 					<FontAwesomeIcon icon={faAngleDown} />
 				</span>
 			</p>
 			{isOver && (
 				<span className="custom-select-box">
+					<div className="triangulo-equilatero-bottom"></div>
 					{items.map((item) => (
 						<Link key={item.title} to={item.link}>
-							{item.title}
+							{item.icon && <FontAwesomeIcon icon={item.icon} />} {item.title}
 						</Link>
 					))}
 				</span>

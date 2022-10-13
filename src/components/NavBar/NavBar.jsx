@@ -25,7 +25,10 @@ export default function NavBar({ brandImg }) {
 					<CustomSelect
 						title="Categorias"
 						items={[
-							{ title: "Jardín", link: "/category/jardin" },
+							{
+								title: "Jardín",
+								link: "/category/jardin",
+							},
 							{ title: "Hogar", link: "/category/hogar" },
 							{ title: "Habitación", link: "/category/habitacion" },
 						]}
