@@ -9,7 +9,7 @@ const Checkout = ({ orderData }) => {
 					margin: "2rem",
 				}}
 			>
-				<h1>Gracias {orderData.buyer.name} por tu compra!</h1>
+				<h1>Gracias {orderData.buyer.firstName} por tu compra!</h1>
 				<h5>Número de Orden {orderData.orderId}</h5>
 				<p>
 					Te hemos mandado a tu mail {orderData.buyer.email} la factura de

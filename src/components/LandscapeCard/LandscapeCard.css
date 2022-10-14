@@ -15,8 +15,9 @@
 .landscape-card--img img {
 	height: 220px;
 	width: 220px;
-	object-fit: cover;
+	object-fit: contain;
 	margin-left: 0.5rem;
+	background-color: white;
 }
 
 .landscape-card--detail {

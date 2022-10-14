@@ -9,22 +9,22 @@ import EmptyCart from "../EmptyCart/EmptyCart";
 import GhostButton from "../GhostButton/GhostButton";
 import Checkout from "../Checkout/Checkout";
 import Loader from "../Loader/Loader";
+import CheckoutForm from "../CheckoutForm/CheckoutForm";
 
 const Cart = () => {
 	const [isLoading, setIsLoading] = useState(false);
+
 	const [orderSended, setOrderSended] = useState(false);
 
-	const { cart, getTotalPrice, getCartCount, clearCart } =
+	const [askingBuyerData, setAskingBuyerData] = useState(false);
+
+	const { cart, getTotalPrice, getCartCount, clearCart, getBuyerData } =
 		useContext(cartContext);
 
 	const makeOrder = async () => {
 		setIsLoading(true);
 		const order = {
-			buyer: {
-				name: "Lucas Ignacio",
-				phone: "3512315231",
-				email: "luquis@gmail.com",
-			},
+			buyer: getBuyerData(),
 			items: [...cart],
 			total: getTotalPrice(),
 		};
@@ -54,6 +54,8 @@ const Cart = () => {
 				<h1>Carrito</h1>
 				{!getCartCount() > 0 ? (
 					<EmptyCart />
+				) : askingBuyerData ? (
+					<CheckoutForm onSubmit={makeOrder} />
 				) : (
 					<div
 						style={{
@@ -69,7 +71,10 @@ const Cart = () => {
 								${new Intl.NumberFormat().format(getTotalPrice().toFixed(2))}
 							</span>
 						</h3>
-						<GhostButton text={"Finalizar compra"} handleFunction={makeOrder} />
+						<GhostButton
+							text={"Finalizar compra"}
+							handleFunction={() => setAskingBuyerData(true)}
+						/>
 					</div>
 				)}
 			</section>

@@ -1,4 +1,4 @@
-import { Children, useState } from "react";
+import { useState } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -24,7 +24,7 @@ const CustomSelect = ({ items, children }) => {
 		>
 			<p className="custom-select--title">
 				{children}{" "}
-				<span style={{ fontSize: 10 }}>
+				<span style={{ fontSize: 10, color: "#f0f8ff94" }}>
 					<FontAwesomeIcon icon={faAngleDown} />
 				</span>
 			</p>

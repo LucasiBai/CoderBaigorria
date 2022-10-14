@@ -6,6 +6,7 @@ const ItemColumnList = ({ items }) => {
 			style={{
 				display: "flex",
 				flexDirection: "column",
+				width: "90%",
 			}}
 		>
 			{items.map((item) => (

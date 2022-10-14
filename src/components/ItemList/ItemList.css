@@ -43,10 +43,10 @@
 	box-shadow: 1px 1px 10px #0000002b;
 }
 .slider-left-button {
-	left: 0;
+	left: -12px;
 }
 .slider-right-button {
-	right: 0;
+	right: -12px;
 }
 
 .slider-left-button:hover,

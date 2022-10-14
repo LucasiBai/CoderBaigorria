@@ -1,10 +1,17 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 
 const cartContext = createContext(0);
 
 const CartContextProvider = ({ children }) => {
 	// Estados
 	const [cart, setCart] = useState([]);
+
+	const [buyerData, setBuyerData] = useState({
+		firstName: "",
+		lastName: "",
+		phone: "",
+		email: "",
+	});
 
 	// Funciones
 
@@ -62,7 +69,7 @@ const CartContextProvider = ({ children }) => {
 		setCart(updatedCart);
 	};
 
-	useEffect(() => console.log(cart), [cart]);
+	const getBuyerData = () => buyerData;
 
 	return (
 		<cartContext.Provider
@@ -76,6 +83,8 @@ const CartContextProvider = ({ children }) => {
 				getCartCount,
 				getTotalPrice,
 				changeItemCount,
+				setBuyerData,
+				getBuyerData,
 			}}
 		>
 			{children}
