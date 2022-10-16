@@ -14,6 +14,7 @@ const MoveButton = ({ direction, handleSlide, className }) => {
 				cursor: "pointer",
 				border: "none",
 				fontSize: "20px",
+				backgroundColor: "white",
 			}}
 		>
 			<FontAwesomeIcon

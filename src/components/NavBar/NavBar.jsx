@@ -6,6 +6,7 @@ import CartWidget from "../CartWidget/CartWidget";
 import ProfileButton from "../ProfileButton/ProfileButton";
 import SearchBar from "../SearchBar/SearchBar";
 import CustomSelect from "../CustomSelect/CustomSelect";
+import NavListContainer from "../NavListContainer/NavListContainer";
 
 export default function NavBar({ brandImg }) {
 	return (
@@ -36,9 +37,7 @@ export default function NavBar({ brandImg }) {
 					</CustomSelect>
 				</li>
 				<li className="nav-item">
-					<div style={{ display: "flex", flexDirection: "column" }}>
-						<Link>Favoritos</Link>
-					</div>
+					<NavListContainer>Favoritos</NavListContainer>
 				</li>
 
 				<li className="nav-item">

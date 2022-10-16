@@ -167,6 +167,20 @@ const getProduct = async (productId) => {
 	return data;
 };
 
+const getFavouriteProducts = async () => {
+	const refQuery = doc(firestore, "favouriteItems", "8qHOZimOypDaaGtCkY6s");
+	const itemListSnapshot = await getDoc(refQuery);
+
+	const itemListData = [];
+
+	for (const itemId of itemListSnapshot.data().itemsId) {
+		const item = await getProduct(itemId);
+		itemListData.push(item);
+	}
+
+	return itemListData;
+};
+
 // Métodos POST y PUT
 
 const updateStock = (products) => {
@@ -195,11 +209,22 @@ const updateProductsList = async () => {
 	}
 };
 
+const deleteFavouriteProduct = async (itemId) => {
+	const refQuery = doc(firestore, "favouriteItems", "8qHOZimOypDaaGtCkY6s");
+	const snapshot = await getDoc(refQuery);
+
+	const filterData = snapshot.map((item) => itemId !== item.id);
+
+	updateDoc(refQuery, { itemsId: filterData });
+};
+
 export {
 	firestore,
 	getProduct,
 	getFilterProducts,
 	getProducts,
+	getFavouriteProducts,
 	sendOrder,
 	updateProductsList,
+	deleteFavouriteProduct,
 };

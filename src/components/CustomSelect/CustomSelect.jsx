@@ -31,11 +31,12 @@ const CustomSelect = ({ items, children }) => {
 			{isOver && (
 				<span className="custom-select-box">
 					<div className="triangulo-equilatero-bottom"></div>
-					{items.map((item) => (
-						<Link key={item.title} to={item.link}>
-							{item.icon && <FontAwesomeIcon icon={item.icon} />} {item.title}
-						</Link>
-					))}
+					{items &&
+						items.map((item) => (
+							<Link key={item.title} to={item.link}>
+								{item.icon && <FontAwesomeIcon icon={item.icon} />} {item.title}
+							</Link>
+						))}
 				</span>
 			)}
 		</div>

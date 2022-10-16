@@ -1,0 +1,10 @@
+.nav-item-list {
+	padding: 3px;
+	position: relative;
+}
+
+.nav-item-list--title {
+	cursor: pointer;
+	color: aliceblue;
+	word-spacing: -2px;
+}
