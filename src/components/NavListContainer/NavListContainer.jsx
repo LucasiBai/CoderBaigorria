@@ -22,10 +22,10 @@ const NavListContainer = ({ children }) => {
 
 	return (
 		<div
-			onMouseOver={() => {
+			onMouseEnter={() => {
 				mouseOver(true);
 			}}
-			onMouseOut={() => {
+			onMouseLeave={() => {
 				mouseOver(false);
 			}}
 			className="nav-item-list"

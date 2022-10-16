@@ -33,10 +33,22 @@ const NavList = ({ title, getProductsFunction, deleteProductsFunction }) => {
 				<hr />
 			</span>
 
-			<div className="nav-item-list--items">
+			<div
+				className="nav-item-list--items"
+				style={
+					!listItems.length > 0 && !isLoading
+						? {
+								justifyContent: "center",
+								display: "flex",
+								height: "3rem",
+								alignItems: "center",
+						  }
+						: {}
+				}
+			>
 				{isLoading ? (
 					<Loader />
-				) : (
+				) : listItems.length > 0 ? (
 					listItems.map((item) => (
 						<span key={item.id}>
 							<Link to={`/item/${item.id}`}>
@@ -55,6 +67,8 @@ const NavList = ({ title, getProductsFunction, deleteProductsFunction }) => {
 							</Link>
 						</span>
 					))
+				) : (
+					<p style={{ color: "#d2d9df" }}>{title} se encuentra vacio...</p>
 				)}
 			</div>
 		</span>

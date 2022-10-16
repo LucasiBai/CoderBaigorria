@@ -18,8 +18,8 @@ const CustomSelect = ({ items, children }) => {
 
 	return (
 		<div
-			onMouseOver={() => mouseOver(true)}
-			onMouseOut={() => mouseOver(false)}
+			onMouseEnter={() => mouseOver(true)}
+			onMouseLeave={() => mouseOver(false)}
 			className="custom-select"
 		>
 			<p className="custom-select--title">
