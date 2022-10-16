@@ -213,7 +213,9 @@ const deleteFavouriteProduct = async (itemId) => {
 	const refQuery = doc(firestore, "favouriteItems", "8qHOZimOypDaaGtCkY6s");
 	const snapshot = await getDoc(refQuery);
 
-	const filterData = snapshot.map((item) => itemId !== item.id);
+	const filterData = snapshot
+		.data()
+		.itemsId.filter((productoId) => productoId !== itemId);
 
 	updateDoc(refQuery, { itemsId: filterData });
 };
