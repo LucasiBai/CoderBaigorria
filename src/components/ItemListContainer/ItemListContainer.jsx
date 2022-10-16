@@ -41,7 +41,7 @@ const ItemListContainer = ({ greeting }) => {
 					<Loader />
 				</div>
 			) : (
-				<ItemList datos={data} greeting={greet} />
+				<ItemList datos={data} greeting={greet} height={2} />
 			)}
 		</main>
 	);

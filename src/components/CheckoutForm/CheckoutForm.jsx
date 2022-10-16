@@ -59,7 +59,7 @@ const CheckoutForm = ({ onSubmit }) => {
 					value={formData.email}
 					required={true}
 				/>
-				<input type="submit" />
+				<input type="submit" value={"Finalizar compra"} />
 			</form>
 		</section>
 	);

@@ -72,7 +72,7 @@ const Cart = () => {
 							</span>
 						</h3>
 						<GhostButton
-							text={"Finalizar compra"}
+							text={"Continuar compra"}
 							handleFunction={() => setAskingBuyerData(true)}
 						/>
 					</div>
