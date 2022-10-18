@@ -220,6 +220,22 @@ const deleteFavouriteProduct = async (itemId) => {
 	updateDoc(refQuery, { itemsId: filterData });
 };
 
+const addProductToFavourite = async (id) => {
+	const refQuery = doc(firestore, "favouriteItems", "8qHOZimOypDaaGtCkY6s");
+	const snapshot = await getDoc(refQuery);
+
+	const updatedData = [...snapshot.data().itemsId, id];
+
+	updateDoc(refQuery, { itemsId: updatedData });
+};
+
+const isInFavourite = async (id) => {
+	const refQuery = doc(firestore, "favouriteItems", "8qHOZimOypDaaGtCkY6s");
+	const snapshot = await getDoc(refQuery);
+
+	return snapshot.data().itemsId.includes(id);
+};
+
 export {
 	firestore,
 	getProduct,
@@ -229,4 +245,6 @@ export {
 	sendOrder,
 	updateProductsList,
 	deleteFavouriteProduct,
+	addProductToFavourite,
+	isInFavourite,
 };

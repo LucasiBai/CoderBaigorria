@@ -8,6 +8,7 @@
 	background-color: white;
 	border-radius: 7px;
 	margin: 0.5rem 0.3rem;
+	position: relative;
 
 	cursor: pointer;
 	transition: all 0.1s ease;
@@ -50,4 +51,19 @@
 	object-fit: contain;
 	margin: 0;
 	background-color: white;
+}
+
+.card-favourite-button {
+	opacity: 40%;
+	position: absolute;
+	right: 4px;
+	top: 4px;
+}
+
+.card-favourite-button:hover {
+	opacity: 100%;
+}
+
+.in-fav-button {
+	opacity: 100%;
 }

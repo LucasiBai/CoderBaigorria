@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from "react";
 
 import { Link } from "react-router-dom";
 
+import NavListItem from "../NavListItem/NavListItem";
 import Loader from "../Loader/Loader";
 
 import "./NavList.css";
@@ -50,22 +51,11 @@ const NavList = ({ title, getProductsFunction, deleteProductsFunction }) => {
 					<Loader />
 				) : listItems.length > 0 ? (
 					listItems.map((item) => (
-						<span key={item.id}>
-							<Link to={`/item/${item.id}`}>
-								<img src={item.img} alt={item.title} />
-								<div className="nav-item-list--data">
-									<h5>{item.title}</h5>
-									<h6>$ {new Intl.NumberFormat().format(item.price)}</h6>
-									<button
-										onClick={() => {
-											deleteProductsFunction(item.id);
-										}}
-									>
-										Eliminar
-									</button>
-								</div>
-							</Link>
-						</span>
+						<NavListItem
+							key={item.id}
+							item={item}
+							deleteFunction={deleteProductsFunction}
+						/>
 					))
 				) : (
 					<p style={{ color: "#d2d9df" }}>{title} se encuentra vacio...</p>

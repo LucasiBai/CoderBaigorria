@@ -11,28 +11,34 @@ import { CartContextProvider } from "./contexts/cartContext";
 import React from "react";
 import { Cart } from "./components/Cart/Cart";
 import NotFoundPage from "./components/NotFoundPage";
+import FavouriteItemsContextProvider from "./contexts/FavouriteItemsContext";
 
 function App() {
 	return (
 		<CartContextProvider>
-			<BrowserRouter>
-				<Header />
-				<Routes>
-					<Route
-						path="/"
-						element={<ItemListContainer greeting="Productos" />}
+			<FavouriteItemsContextProvider>
+				<BrowserRouter>
+					<Header />
+					<Routes>
+						<Route
+							path="/"
+							element={<ItemListContainer greeting="Productos" />}
+						/>
+						<Route path="/item/:productId" element={<ItemDetailContainer />} />
+						<Route
+							path="/category/:categoryId"
+							element={<ItemListContainer />}
+						/>
+						<Route path="/cart" element={<Cart />} />
+						<Route path="*" element={<NotFoundPage />} />
+					</Routes>
+					<Footer
+						brand={"LaCandela"}
+						address={"Boulevard 25 de Mayo 325, Morteros"}
+						backColor={"#c9d6e1"}
 					/>
-					<Route path="/item/:productId" element={<ItemDetailContainer />} />
-					<Route path="/category/:categoryId" element={<ItemListContainer />} />
-					<Route path="/cart" element={<Cart />} />
-					<Route path="*" element={<NotFoundPage />} />
-				</Routes>
-				<Footer
-					brand={"LaCandela"}
-					address={"Boulevard 25 de Mayo 325, Morteros"}
-					backColor={"#c9d6e1"}
-				/>
-			</BrowserRouter>
+				</BrowserRouter>
+			</FavouriteItemsContextProvider>
 		</CartContextProvider>
 	);
 }
