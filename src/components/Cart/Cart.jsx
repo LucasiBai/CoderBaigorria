@@ -68,17 +68,27 @@ const Cart = () => {
 					>
 						<ItemColumnList items={cart} />
 						<hr />
-						<h3>
-							El total es{" "}
-							<span style={{ fontSize: 35 }}>
-								${new Intl.NumberFormat().format(getTotalPrice().toFixed(2))}
-							</span>
-						</h3>
-						<hr />
-						<GhostButton
-							text={"Continuar compra"}
-							handleFunction={() => setAskingBuyerData(true)}
-						/>
+						<div className="cart-price">
+							<div className="cart-price--titles">
+								<h3>Envío</h3>
+								<h3 style={{ fontSize: 32 }}>Total con envío</h3>
+							</div>
+							<div className="cart-price--counts">
+								<h3>$520</h3>
+								<h3>
+									$
+									{new Intl.NumberFormat().format(
+										(getTotalPrice() + 520).toFixed(2),
+									)}
+								</h3>
+								<GhostButton
+									text={"Continuar compra"}
+									handleFunction={() => setAskingBuyerData(true)}
+								/>
+							</div>
+						</div>
+
+						<hr style={{ marginBottom: "6rem" }} />
 					</div>
 				)}
 			</section>
