@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 
-import { Link } from "react-router-dom";
+import { Ring } from "@uiball/loaders";
 
 import NavListItem from "../NavListItem/NavListItem";
 import Loader from "../Loader/Loader";
@@ -37,7 +37,7 @@ const NavList = ({ title, getProductsFunction, deleteProductsFunction }) => {
 			<div
 				className="nav-item-list--items"
 				style={
-					!listItems.length > 0 && !isLoading
+					!listItems.length > 0
 						? {
 								justifyContent: "center",
 								display: "flex",
@@ -48,7 +48,7 @@ const NavList = ({ title, getProductsFunction, deleteProductsFunction }) => {
 				}
 			>
 				{isLoading ? (
-					<Loader />
+					<Ring color="aliceblue" size={30} />
 				) : listItems.length > 0 ? (
 					listItems.map((item) => (
 						<NavListItem

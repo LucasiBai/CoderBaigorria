@@ -1,0 +1,15 @@
+.cart-title {
+	margin: 2rem 0 1rem;
+	font-size: 35px;
+}
+
+.cart-box hr {
+	margin: 3rem;
+	border-style: solid;
+	color: #0000001f;
+	height: 1px;
+	border: 0;
+	width: 80%;
+	background: #36363638;
+	background-color: #cccccc61;
+}

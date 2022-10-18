@@ -11,6 +11,8 @@ import Checkout from "../Checkout/Checkout";
 import Loader from "../Loader/Loader";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 
+import "./Cart.css";
+
 const Cart = () => {
 	const [isLoading, setIsLoading] = useState(false);
 
@@ -50,8 +52,8 @@ const Cart = () => {
 
 	return (
 		<main>
-			<section className="list--box">
-				<h1>Carrito</h1>
+			<section className="list--box cart-box">
+				<h1 className="cart-title">Carrito</h1>
 				{!getCartCount() > 0 ? (
 					<EmptyCart />
 				) : askingBuyerData ? (
@@ -65,12 +67,14 @@ const Cart = () => {
 						}}
 					>
 						<ItemColumnList items={cart} />
+						<hr />
 						<h3>
 							El total es{" "}
 							<span style={{ fontSize: 35 }}>
 								${new Intl.NumberFormat().format(getTotalPrice().toFixed(2))}
 							</span>
 						</h3>
+						<hr />
 						<GhostButton
 							text={"Continuar compra"}
 							handleFunction={() => setAskingBuyerData(true)}

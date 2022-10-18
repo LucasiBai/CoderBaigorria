@@ -13,8 +13,8 @@
 	justify-content: center;
 }
 .landscape-card--img img {
-	height: 220px;
-	width: 220px;
+	height: 263px;
+	width: 263px;
 	object-fit: contain;
 	margin-left: 0.5rem;
 	background-color: white;
@@ -29,14 +29,14 @@
 }
 
 .landscape-card--detail h3 {
-	font-size: 24px;
+	font-size: 30px;
 	font-weight: 500;
 	color: black;
 }
 
 .landscape-card--detail h4 {
 	margin: 1.5rem 0 0.3rem 0;
-	font-size: 25px;
+	font-size: 32px;
 	font-weight: 100;
 }
 
