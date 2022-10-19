@@ -13,8 +13,7 @@ const CheckoutForm = ({ onSubmit }) => {
 	const { setBuyerData } = useContext(cartContext);
 
 	const updateFormData = (e) => {
-		const imputName = e.target.name;
-		const newValue = e.target.value;
+		const { name: imputName, value: newValue } = e.target;
 
 		const updatedData = { ...formData };
 		updatedData[imputName] = newValue;

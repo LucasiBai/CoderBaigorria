@@ -3,11 +3,15 @@ import { useEffect, useState, useCallback } from "react";
 import { Ring } from "@uiball/loaders";
 
 import NavListItem from "../NavListItem/NavListItem";
-import Loader from "../Loader/Loader";
 
 import "./NavList.css";
 
-const NavList = ({ title, getProductsFunction, deleteProductsFunction }) => {
+const NavList = ({
+	title,
+	getProductsFunction,
+	deleteProductsFunction,
+	count,
+}) => {
 	const [listItems, setListItems] = useState([]);
 
 	const [isLoading, setIsLoading] = useState(true);
@@ -24,7 +28,6 @@ const NavList = ({ title, getProductsFunction, deleteProductsFunction }) => {
 
 	return (
 		<span className="nav-item-list-box">
-			<div className="nav-list--triangulo-equilatero-bottom"></div>
 			<p
 				style={{ margin: "0 1rem 5px 1rem", color: "aliceblue", fontSize: 17 }}
 			>
@@ -55,6 +58,7 @@ const NavList = ({ title, getProductsFunction, deleteProductsFunction }) => {
 							key={item.id}
 							item={item}
 							deleteFunction={deleteProductsFunction}
+							count={count}
 						/>
 					))
 				) : (

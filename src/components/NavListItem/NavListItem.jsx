@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import "./NavListItem.css";
 
-const NavListItem = ({ item, deleteFunction }) => {
+const NavListItem = ({ item, deleteFunction, count }) => {
 	const [itemDeleted, setItemDeleted] = useState(false);
 
 	const deleteItem = (itemId) => {
@@ -33,6 +33,7 @@ const NavListItem = ({ item, deleteFunction }) => {
 				</React.Fragment>
 			) : (
 				<React.Fragment>
+					{count && <p style={{ color: "aliceblue" }}>{item.count}x</p>}
 					<Link to={`/item/${item.id}`}>
 						<img src={item.img} alt={item.title} />
 					</Link>

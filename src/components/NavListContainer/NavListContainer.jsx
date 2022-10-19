@@ -1,17 +1,18 @@
 import { useState } from "react";
 
-import {
-	getFavouriteProducts,
-	deleteFavouriteProduct,
-} from "../../services/firestore";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 import "./NavListContainer.css";
 import NavList from "../NavList/NavList";
 
-const NavListContainer = ({ children }) => {
+const NavListContainer = ({
+	children,
+	getProductsFunction,
+	deleteProductsFunction,
+	count,
+	arrow,
+}) => {
 	const [isOver, setIsOver] = useState(false);
 
 	const mouseOver = (bool) => {
@@ -32,15 +33,24 @@ const NavListContainer = ({ children }) => {
 		>
 			<p className="nav-item-list--title">
 				{children}{" "}
-				<span style={{ fontSize: 10, color: "#f0f8ff94" }}>
-					<FontAwesomeIcon icon={faAngleDown} />
+				<span
+					style={{ fontSize: 10, color: "#f0f8ff94", position: "relative" }}
+				>
+					{arrow && <FontAwesomeIcon icon={faAngleDown} />}
+					{isOver && (
+						<div
+							className="nav-list--triangulo-equilatero-bottom"
+							style={!arrow ? { left: -13, top: 2 } : {}}
+						/>
+					)}
 				</span>
 			</p>
 			{isOver && (
 				<NavList
 					title={children}
-					getProductsFunction={getFavouriteProducts}
-					deleteProductsFunction={deleteFavouriteProduct}
+					getProductsFunction={getProductsFunction}
+					deleteProductsFunction={deleteProductsFunction}
+					count={count}
 				/>
 			)}
 		</div>

@@ -8,3 +8,15 @@
 	color: aliceblue;
 	word-spacing: -2px;
 }
+
+.nav-list--triangulo-equilatero-bottom {
+	width: 0;
+	height: 0;
+	border-right: 10px solid transparent;
+	border-top: 10px solid transparent;
+	border-left: 10px solid transparent;
+	border-bottom: 10px solid rgb(65, 65, 65);
+	position: absolute;
+	top: 0;
+	left: -5.5px;
+}

@@ -11,18 +11,6 @@
 	z-index: 1;
 }
 
-.nav-list--triangulo-equilatero-bottom {
-	width: 0;
-	height: 0;
-	border-right: 10px solid transparent;
-	border-top: 10px solid transparent;
-	border-left: 10px solid transparent;
-	border-bottom: 10px solid rgb(65, 65, 65);
-	position: absolute;
-	top: -18px;
-	left: 285px;
-}
-
 .nav-item-list-box hr {
 	border-style: solid;
 	color: #0000001f;

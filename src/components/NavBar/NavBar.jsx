@@ -1,6 +1,13 @@
-import "./NavBar.css";
+import { useContext } from "react";
 
 import { Link } from "react-router-dom";
+
+import {
+	getFavouriteProducts,
+	deleteFavouriteProduct,
+} from "../../services/firestore";
+
+import { cartContext } from "../../contexts/cartContext";
 
 import CartWidget from "../CartWidget/CartWidget";
 import ProfileButton from "../ProfileButton/ProfileButton";
@@ -8,7 +15,11 @@ import SearchBar from "../SearchBar/SearchBar";
 import CustomSelect from "../CustomSelect/CustomSelect";
 import NavListContainer from "../NavListContainer/NavListContainer";
 
+import "./NavBar.css";
+
 export default function NavBar({ brandImg }) {
+	const { getCartProducts, removeItem } = useContext(cartContext);
+
 	return (
 		<nav style={{ width: 1200, alignItems: "space-between" }}>
 			<div>
@@ -16,7 +27,6 @@ export default function NavBar({ brandImg }) {
 					<img src={brandImg} alt="logo" className="nav--logo" />
 				</Link>
 			</div>
-
 			<ul className="nav--items">
 				<li>{/* <SearchBar /> */}</li>
 				<li className="nav-item">
@@ -37,13 +47,24 @@ export default function NavBar({ brandImg }) {
 					</CustomSelect>
 				</li>
 				<li className="nav-item">
-					<NavListContainer>Favoritos</NavListContainer>
+					<NavListContainer
+						getProductsFunction={getFavouriteProducts}
+						deleteProductsFunction={deleteFavouriteProduct}
+						arrow
+					>
+						Favoritos
+					</NavListContainer>
 				</li>
-
 				<li className="nav-item">
-					<Link to="/cart">
-						<CartWidget name={"Carrito"} />
-					</Link>
+					<NavListContainer
+						getProductsFunction={getCartProducts}
+						deleteProductsFunction={removeItem}
+						count
+					>
+						<Link to="/cart">
+							<CartWidget name={"Carrito"} />
+						</Link>
+					</NavListContainer>
 				</li>
 				<li className="nav-item">
 					<ProfileButton />

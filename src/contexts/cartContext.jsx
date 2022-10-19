@@ -15,6 +15,8 @@ const CartContextProvider = ({ children }) => {
 
 	// Funciones
 
+	const getCartProducts = () => cart;
+
 	// Agregar productos al carrito
 	const addItem = (item, count) => {
 		if (isInCart(item.id)) {
@@ -75,6 +77,7 @@ const CartContextProvider = ({ children }) => {
 		<cartContext.Provider
 			value={{
 				cart,
+				getCartProducts,
 				addItem,
 				removeItem,
 				clearCart,
