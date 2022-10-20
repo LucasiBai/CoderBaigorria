@@ -2,6 +2,9 @@ import { useEffect, useState, useCallback } from "react";
 
 import { Ring } from "@uiball/loaders";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faX } from "@fortawesome/free-solid-svg-icons";
+
 import NavListItem from "../NavListItem/NavListItem";
 
 import "./NavList.css";
@@ -10,6 +13,8 @@ const NavList = ({
 	title,
 	getProductsFunction,
 	deleteProductsFunction,
+	closeFunction,
+	closeButton,
 	count,
 }) => {
 	const [listItems, setListItems] = useState([]);
@@ -28,10 +33,13 @@ const NavList = ({
 
 	return (
 		<span className="nav-item-list-box">
-			<p
-				style={{ margin: "0 1rem 5px 1rem", color: "aliceblue", fontSize: 17 }}
-			>
+			<p className="nav-item-list-box__header">
 				{title}
+				{closeButton && (
+					<button className="nav-item-list-box__button" onClick={closeFunction}>
+						<FontAwesomeIcon icon={faX} />
+					</button>
+				)}
 			</p>
 			<span style={{ display: "flex", justifyContent: "center" }}>
 				<hr />

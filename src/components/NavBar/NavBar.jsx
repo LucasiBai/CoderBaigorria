@@ -18,7 +18,7 @@ import NavListContainer from "../NavListContainer/NavListContainer";
 import "./NavBar.css";
 
 export default function NavBar({ brandImg }) {
-	const { getCartProducts, removeItem } = useContext(cartContext);
+	const { cart, getCartProducts, removeItem } = useContext(cartContext);
 
 	return (
 		<nav style={{ width: 1200, alignItems: "space-between" }}>
@@ -56,15 +56,18 @@ export default function NavBar({ brandImg }) {
 					</NavListContainer>
 				</li>
 				<li className="nav-item">
-					<NavListContainer
-						getProductsFunction={getCartProducts}
-						deleteProductsFunction={removeItem}
-						count
-					>
-						<Link to="/cart">
-							<CartWidget name={"Carrito"} />
-						</Link>
-					</NavListContainer>
+					{cart.length !== 0 ? (
+						<NavListContainer
+							getProductsFunction={getCartProducts}
+							deleteProductsFunction={removeItem}
+							count
+							closeButton
+						>
+							<CartWidget name={"Carrito"} link="/cart" />
+						</NavListContainer>
+					) : (
+						<CartWidget name={"Carrito"} link="/cart" />
+					)}
 				</li>
 				<li className="nav-item">
 					<ProfileButton />

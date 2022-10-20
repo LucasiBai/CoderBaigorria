@@ -1,4 +1,4 @@
-.nav-item-list--items .item-list--item {
+.item-list--item {
 	display: flex;
 	padding: 1rem;
 	align-items: center;
@@ -9,40 +9,40 @@
 	margin: 0 1rem;
 }
 
-.nav-item-list--items h5,
-.nav-item-list--items h6 {
+.item-list--item h5,
+.item-list--item h6 {
 	margin-bottom: 0.2rem;
 }
 
-.nav-item-list--items h5 {
+.item-list--item h5 {
 	font-weight: normal;
 	font-size: 16px;
 	max-width: 210px;
 	width: 100%;
 }
 
-.nav-item-list--items h6 {
+.item-list--item h6 {
 	font-weight: 100;
 	font-size: 22px;
 	color: aliceblue;
 }
 
-.nav-item-list--items button {
+.item-list--item button {
 	border: none;
 	background: none;
 	cursor: pointer;
 	color: aliceblue;
 }
 
-.nav-item-list--items button:hover {
+.item-list--item button:hover {
 	color: rgb(160, 214, 250);
 }
 
-.nav-item-list--items .item-list--item:hover {
+.item-list--item:hover {
 	background-color: rgb(0, 120, 201);
 }
 
-.nav-item-list--items img {
+.item-list--item img {
 	height: 80px;
 	width: 80px;
 	object-fit: contain;

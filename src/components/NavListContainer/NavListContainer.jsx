@@ -10,10 +10,15 @@ const NavListContainer = ({
 	children,
 	getProductsFunction,
 	deleteProductsFunction,
+	closeButton,
 	count,
 	arrow,
 }) => {
 	const [isOver, setIsOver] = useState(false);
+
+	const closeList = () => {
+		setIsOver(false);
+	};
 
 	const mouseOver = (bool) => {
 		setTimeout(() => {
@@ -40,7 +45,7 @@ const NavListContainer = ({
 					{isOver && (
 						<div
 							className="nav-list--triangulo-equilatero-bottom"
-							style={!arrow ? { left: -13, top: 2 } : {}}
+							style={!arrow ? { left: -13 } : {}}
 						/>
 					)}
 				</span>
@@ -51,6 +56,8 @@ const NavListContainer = ({
 					getProductsFunction={getProductsFunction}
 					deleteProductsFunction={deleteProductsFunction}
 					count={count}
+					closeButton={closeButton}
+					closeFunction={closeList}
 				/>
 			)}
 		</div>
