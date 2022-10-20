@@ -1,0 +1,11 @@
+.move-button {
+	position: absolute;
+	opacity: 0.2;
+	transition: box-shadow 0.2s ease;
+	z-index: 10;
+}
+
+.move-button:hover {
+	opacity: 1;
+	box-shadow: 1px 1px 10px #0000002b;
+}

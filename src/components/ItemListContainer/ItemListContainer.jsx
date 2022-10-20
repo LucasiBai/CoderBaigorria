@@ -2,11 +2,11 @@ import React, { useState, useEffect, useCallback } from "react";
 
 import { useParams } from "react-router-dom";
 
-import ItemList from "../ItemList/ItemList";
-
 import { getProducts, getFilterProducts } from "../../services/firestore";
 
 import Loader from "../Loader/Loader";
+import FullCarousel from "../FullCarousel/FullCarousel";
+import ItemList from "../ItemList/ItemList";
 
 const ItemListContainer = ({ greeting }) => {
 	const [data, setData] = useState([]);
@@ -41,7 +41,10 @@ const ItemListContainer = ({ greeting }) => {
 					<Loader />
 				</div>
 			) : (
-				<ItemList datos={data} greeting={greet} height={2} />
+				<React.Fragment>
+					<FullCarousel />
+					<ItemList datos={data} greeting={greet} height={2} />
+				</React.Fragment>
 			)}
 		</main>
 	);

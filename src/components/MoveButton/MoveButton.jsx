@@ -3,10 +3,12 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 
+import "./MoveButton.css";
+
 const MoveButton = ({ direction, handleSlide, className }) => {
 	return (
 		<button
-			className={className}
+			className={`move-button ${className && className}`}
 			onClick={handleSlide}
 			style={{
 				padding: "0.7rem 1rem",

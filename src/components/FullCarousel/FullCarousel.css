@@ -1,0 +1,21 @@
+.full-carousel__box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.full-carousel__box .carousel-left {
+	left: 0;
+}
+
+.full-carousel__box .carousel-right {
+	right: 0;
+}
+
+.full-carousel {
+	max-width: 1150px;
+	width: 100%;
+	height: 280px;
+	background-color: blue;
+	position: relative;
+}

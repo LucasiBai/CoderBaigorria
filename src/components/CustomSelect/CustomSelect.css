@@ -7,6 +7,7 @@
 	border-radius: 7px;
 	position: absolute;
 	z-index: 1;
+	right: -39px;
 }
 
 .triangulo-equilatero-bottom {
@@ -17,12 +18,13 @@
 	border-left: 10px solid transparent;
 	border-bottom: 10px solid rgb(65, 65, 65);
 	position: absolute;
-	top: -18px;
-	left: 74px;
+	top: 2px;
+	left: -5.5px;
 }
 
 .custom-select {
 	padding: 3px;
+	position: relative;
 }
 
 .custom-select-box a {

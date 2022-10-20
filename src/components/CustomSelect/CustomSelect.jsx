@@ -24,13 +24,15 @@ const CustomSelect = ({ items, children }) => {
 		>
 			<p className="custom-select--title">
 				{children}{" "}
-				<span style={{ fontSize: 10, color: "#f0f8ff94" }}>
+				<span
+					style={{ fontSize: 10, color: "#f0f8ff94", position: "relative" }}
+				>
 					<FontAwesomeIcon icon={faAngleDown} />
+					{isOver && <div className="triangulo-equilatero-bottom" />}
 				</span>
 			</p>
 			{isOver && (
 				<span className="custom-select-box">
-					<div className="triangulo-equilatero-bottom"></div>
 					{items &&
 						items.map((item) => (
 							<Link key={item.title} to={item.link}>
