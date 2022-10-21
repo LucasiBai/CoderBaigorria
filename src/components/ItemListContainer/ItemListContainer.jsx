@@ -70,7 +70,7 @@ const ItemListContainer = ({ greeting }) => {
 				</div>
 			) : (
 				<React.Fragment>
-					<FullCarousel images={images} />
+					<FullCarousel images={images} autoPlay />
 					<ItemList datos={data} greeting={greet} height={2} />
 				</React.Fragment>
 			)}

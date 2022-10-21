@@ -4,7 +4,7 @@ import FullCarouselImg from "../FullCarouselImg/FullCarouselImg";
 import MoveButton from "../MoveButton/MoveButton";
 
 import "./FullCarousel.css";
-const FullCarousel = ({ images }) => {
+const FullCarousel = ({ images, autoPlay }) => {
 	const [currentIdx, setCurrentIdx] = useState({
 		previous: images.length - 1,
 		center: 0,
@@ -64,9 +64,7 @@ const FullCarousel = ({ images }) => {
 	useEffect(() => {
 		imgsContainer.current.style.transition = "none";
 		imgsContainer.current.style.transform = "translateX(0)";
-
-		console.log(currentIdx);
-	}, [currentImgs]);
+	}, [currentImgs, currentIdx]);
 
 	return (
 		<section className="full-carousel__box">
