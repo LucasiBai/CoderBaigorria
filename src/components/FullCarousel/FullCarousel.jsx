@@ -48,20 +48,25 @@ const FullCarousel = ({ images }) => {
 	};
 
 	const changeImg = (direction) => {
-		imgsContainer.current.style.transition = "300ms ease transform";
+		imgsContainer.current.style.transition = "350ms ease transform";
 		imgsContainer.current.style.transform = `translateX(${
 			direction === "left" ? "" : "-"
 		}1150px)`;
 
-		const transition = () => {
-			imgsContainer.current.style.transition = "none";
-			imgsContainer.current.style.transform = "translateX(0)";
-
+		const endTrigger = () => {
 			changeCurrentImgs(direction);
+			imgsContainer.current.removeEventListener("transitionend", endTrigger);
 		};
 
-		imgsContainer.current.addEventListener("transitionend", transition);
+		imgsContainer.current.addEventListener("transitionend", endTrigger);
 	};
+
+	useEffect(() => {
+		imgsContainer.current.style.transition = "none";
+		imgsContainer.current.style.transform = "translateX(0)";
+
+		console.log(currentIdx);
+	}, [currentImgs]);
 
 	return (
 		<section className="full-carousel__box">

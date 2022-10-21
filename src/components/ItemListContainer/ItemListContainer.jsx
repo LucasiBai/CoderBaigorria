@@ -29,6 +29,11 @@ const images = [
 		name: "Machu Pichu Peru",
 		img: "https://images.unsplash.com/photo-1666240073343-9801b7b5b949?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1150&q=80",
 	},
+	{
+		url: "/category/jardin",
+		name: "esaaa",
+		img: "https://images.unsplash.com/photo-1666060736317-93b546d00a68?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1150&q=80",
+	},
 ];
 
 const ItemListContainer = ({ greeting }) => {
