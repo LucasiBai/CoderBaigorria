@@ -2,16 +2,14 @@ import { Link } from "react-router-dom";
 
 import "./FullCarouselImg.css";
 
-const FullCarouselImg = ({ images }) => {
+const FullCarouselImg = ({ images, reference }) => {
 	return (
-		<article>
+		<article className="full-carousel--img-box" ref={reference}>
 			{images &&
 				images.map((item) => (
-					<Link to={item.url}>
+					<Link to={item.url} key={item.name}>
 						<span
 							style={{
-								backgroundColor: "red",
-								objectFit: "cover",
 								height: "100%",
 							}}
 						>

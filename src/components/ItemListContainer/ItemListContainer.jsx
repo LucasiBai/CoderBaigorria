@@ -8,6 +8,29 @@ import Loader from "../Loader/Loader";
 import FullCarousel from "../FullCarousel/FullCarousel";
 import ItemList from "../ItemList/ItemList";
 
+const images = [
+	{
+		url: "/",
+		name: "Casa",
+		img: "https://images.unsplash.com/photo-1602872029708-84d970d3382b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1150&q=80",
+	},
+	{
+		url: "/",
+		name: "holi",
+		img: "https://images.unsplash.com/photo-1666009812623-31fb98d10579?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1150&q=80",
+	},
+	{
+		url: "/",
+		name: "lol",
+		img: "https://images.unsplash.com/photo-1666224182627-7dc792e4b419?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1150&q=80",
+	},
+	{
+		url: "/",
+		name: "Machu Pichu Peru",
+		img: "https://images.unsplash.com/photo-1666240073343-9801b7b5b949?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1150&q=80",
+	},
+];
+
 const ItemListContainer = ({ greeting }) => {
 	const [data, setData] = useState([]);
 	const [loader, setLoader] = useState(true);
@@ -42,7 +65,7 @@ const ItemListContainer = ({ greeting }) => {
 				</div>
 			) : (
 				<React.Fragment>
-					<FullCarousel />
+					<FullCarousel images={images} />
 					<ItemList datos={data} greeting={greet} height={2} />
 				</React.Fragment>
 			)}

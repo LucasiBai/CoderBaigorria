@@ -29,7 +29,7 @@ const NavList = ({
 
 	useEffect(() => {
 		getItems();
-	}, [listItems, getItems]);
+	}, [getItems]);
 
 	return (
 		<span className="nav-item-list-box">

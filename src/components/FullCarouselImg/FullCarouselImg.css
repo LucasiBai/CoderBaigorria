@@ -1,0 +1,10 @@
+.full-carousel--img-box {
+	display: flex;
+	justify-content: center;
+}
+
+.full-carousel--img-box img {
+	height: 280px;
+	width: 1150px;
+	object-fit: cover;
+}
