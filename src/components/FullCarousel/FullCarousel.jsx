@@ -16,7 +16,7 @@ const FullCarousel = ({ images, autoPlay }) => {
 		if (autoMove) {
 			const interval = setInterval(() => {
 				changeImg();
-			}, 5000);
+			}, 5500);
 			return () => clearInterval(interval);
 		}
 	});

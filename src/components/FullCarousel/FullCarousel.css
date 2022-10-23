@@ -2,7 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin: 0 0.8rem 1rem;
+	margin: 0 1rem 1rem;
 }
 .full-carousel__box .carousel-left,
 .full-carousel__box .carousel-right {

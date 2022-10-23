@@ -1,0 +1,10 @@
+.promotional-cards__box section {
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: 1fr 1fr;
+}
+
+.promotional-cards__box {
+	max-width: 1150px;
+	width: 100%;
+}

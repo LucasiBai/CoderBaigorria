@@ -7,6 +7,7 @@ import { getProducts, getFilterProducts } from "../../services/firestore";
 import Loader from "../Loader/Loader";
 import FullCarousel from "../FullCarousel/FullCarousel";
 import ItemList from "../ItemList/ItemList";
+import PromotionalCardsContainer from "../PromotionalCardsContainer/PromotionalCardsContainer";
 
 const images = [
 	{
@@ -63,7 +64,9 @@ const ItemListContainer = ({ greeting }) => {
 	}, [categoryId, getData]);
 
 	return (
-		<main>
+		<main
+			style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+		>
 			{loader ? (
 				<div style={{ display: "flex", justifyContent: "center" }}>
 					<Loader />
@@ -71,6 +74,7 @@ const ItemListContainer = ({ greeting }) => {
 			) : (
 				<React.Fragment>
 					<FullCarousel images={images} autoPlay />
+					<PromotionalCardsContainer greeting={"Ofertas"} />
 					<ItemList datos={data} greeting={greet} height={2} />
 				</React.Fragment>
 			)}
