@@ -16,14 +16,7 @@
 .detail-description {
 	margin: 1rem;
 }
-.detail-img-item {
-	height: 350px;
-	width: 400px;
-	object-fit: contain;
-	border-radius: 10px;
-	box-shadow: 1px 1px 9px #00000028;
-	background-color: white;
-}
+
 .detail-description__price-box {
 	margin: 1rem 0.5rem;
 }

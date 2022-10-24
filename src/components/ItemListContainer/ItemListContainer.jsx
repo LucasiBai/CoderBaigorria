@@ -39,12 +39,14 @@ const images = [
 
 const itemsPromo = [
 	{
+		id: 1,
 		title: "HASTA 20% OFF EN HOGAR",
 		subtitle: "RENOVÁ TU CASA",
 		url: "/category/hogar",
 		img: "https://http2.mlstatic.com/D_NQ_NP_662815-MLA32618384530_102019-W.webp",
 	},
 	{
+		id: 2,
 		title: "HASTA 15% OFF EN JARDÍN",
 		subtitle: "ILUMINA TU JARDÍN",
 		url: "/category/jardin",
@@ -89,8 +91,9 @@ const ItemListContainer = ({ greeting }) => {
 			) : (
 				<React.Fragment>
 					<FullCarousel images={images} autoPlay />
+					<ItemList datos={data} greeting={"Más vendidos"} />
 					<PromotionalCardsContainer
-						greeting={"Ofertas"}
+						greeting={"Promos Especiales"}
 						items={itemsPromo}
 						width={"1fr 1fr"}
 					/>

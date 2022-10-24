@@ -3,6 +3,8 @@
 	flex-direction: column;
 	align-items: center;
 	margin: 0 1rem 1rem;
+	max-width: 1400px;
+	width: 96%;
 }
 .full-carousel__box .carousel-left,
 .full-carousel__box .carousel-right {

@@ -69,9 +69,9 @@ export default function NavBar({ brandImg }) {
 						<CartWidget name={"Carrito"} link="/cart" />
 					)}
 				</li>
-				<li className="nav-item">
+				{/* <li className="nav-item">
 					<ProfileButton />
-				</li>
+				</li> */}
 			</ul>
 		</nav>
 	);

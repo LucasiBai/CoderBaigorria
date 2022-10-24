@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { cartContext } from "../../contexts/cartContext";
 
 import CartInstance from "../CartInstance/CartInstance";
+import ImgContainer from "../ImgContainer/ImgContainer";
 import Loader from "../Loader/Loader";
 
 import "./ItemDetail.css";
@@ -22,10 +23,10 @@ function ItemDetail({ item }) {
 		setCount(1);
 	};
 
-	useEffect(
-		() => (onCountChange(count), setStock(item.stock - getItemCount(item.id))),
-		[count, item.stock],
-	);
+	useEffect(() => {
+		onCountChange(count);
+		setStock(item.stock - getItemCount(item.id));
+	}, [count, item.stock]);
 
 	return (
 		<article className="detail-item">
@@ -33,9 +34,7 @@ function ItemDetail({ item }) {
 				<Loader />
 			) : (
 				<React.Fragment>
-					<div className="detail-img">
-						<img src={item.img} alt={item.title} className="detail-img-item" />
-					</div>
+					<ImgContainer imgs={[item.img]} alt={item.title} />
 					<div className="detail-description">
 						<h2 className="detail-description__title">{item.title}</h2>
 						<div className="detail-description__price-box">

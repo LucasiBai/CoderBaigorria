@@ -10,7 +10,8 @@ const PromotionalCardsContainer = ({ greeting, items, width }) => {
 					gridTemplateColumns: `${width}`,
 				}}
 			>
-				{items && items.map((item) => <PromotionalCard item={item} />)}
+				{items &&
+					items.map((item) => <PromotionalCard key={item.id} item={item} />)}
 			</section>
 		</section>
 	);
