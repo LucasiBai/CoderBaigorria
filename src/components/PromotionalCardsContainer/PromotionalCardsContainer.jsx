@@ -1,19 +1,16 @@
 import PromotionalCard from "../PromotionalCard/PromotionalCard";
 import "./PromotionalCardsContainer.css";
 
-const PromotionalCardsContainer = ({ greeting, firstCard, secondCard }) => {
+const PromotionalCardsContainer = ({ greeting, items, width }) => {
 	return (
 		<section className="promotional-cards__box">
 			<h3>{greeting}</h3>
 			<section
-				style={
-					firstCard && secondCard
-						? { gridTemplateColumns: `${firstCard}fr ${secondCard}fr` }
-						: {}
-				}
+				style={{
+					gridTemplateColumns: `${width}`,
+				}}
 			>
-				<PromotionalCard />
-				<PromotionalCard />
+				{items && items.map((item) => <PromotionalCard item={item} />)}
 			</section>
 		</section>
 	);

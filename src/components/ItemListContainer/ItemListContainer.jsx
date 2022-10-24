@@ -37,6 +37,21 @@ const images = [
 	},
 ];
 
+const itemsPromo = [
+	{
+		title: "HASTA 20% OFF EN HOGAR",
+		subtitle: "RENOVÁ TU CASA",
+		url: "/category/hogar",
+		img: "https://http2.mlstatic.com/D_NQ_NP_662815-MLA32618384530_102019-W.webp",
+	},
+	{
+		title: "HASTA 15% OFF EN JARDÍN",
+		subtitle: "ILUMINA TU JARDÍN",
+		url: "/category/jardin",
+		img: "https://http2.mlstatic.com/D_NQ_NP_846639-MLA49041116784_022022-O.webp",
+	},
+];
+
 const ItemListContainer = ({ greeting }) => {
 	const [data, setData] = useState([]);
 	const [loader, setLoader] = useState(true);
@@ -74,7 +89,11 @@ const ItemListContainer = ({ greeting }) => {
 			) : (
 				<React.Fragment>
 					<FullCarousel images={images} autoPlay />
-					<PromotionalCardsContainer greeting={"Ofertas"} />
+					<PromotionalCardsContainer
+						greeting={"Ofertas"}
+						items={itemsPromo}
+						width={"1fr 1fr"}
+					/>
 					<ItemList datos={data} greeting={greet} height={2} />
 				</React.Fragment>
 			)}

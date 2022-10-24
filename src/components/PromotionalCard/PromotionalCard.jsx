@@ -1,20 +1,27 @@
+import { Link, useNavigate } from "react-router-dom";
+
 import GhostButton from "../GhostButton/GhostButton";
 
 import "./PromotionalCard.css";
 
-const PromotionalCard = () => {
+const PromotionalCard = ({ item }) => {
+	const navigate = useNavigate();
+
+	const handleRedirect = () => {
+		navigate(item && item.url);
+	};
+
 	return (
-		<article>
-			<div>
-				<h5>RENOVÁ TUS ESPACIOS</h5>
-				<h4>HASTA 25% OFF EN DECORACIÓN</h4>
-				<GhostButton text={"Ver más"} />
-			</div>
-			<img
-				src="https://http2.mlstatic.com/D_NQ_NP_887880-MLA49215970688_022022-O.webp"
-				alt=""
-			/>
-		</article>
+		<Link to={item && item.url}>
+			<article className="promotional-card">
+				<div>
+					<h5>{item && item.subtitle}</h5>
+					<h4>{item && item.title}</h4>
+					<GhostButton text={"Ver más"} onClick={handleRedirect} />
+				</div>
+				<img src={item && item.img} alt={item && item.title} />
+			</article>
+		</Link>
 	);
 };
 

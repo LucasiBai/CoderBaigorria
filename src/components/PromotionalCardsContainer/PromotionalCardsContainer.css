@@ -2,9 +2,20 @@
 	display: grid;
 	grid-auto-flow: column;
 	grid-template-columns: 1fr 1fr;
+	gap: 0.8rem;
+	margin: 0.7rem 0;
 }
 
 .promotional-cards__box {
 	max-width: 1150px;
 	width: 100%;
+	padding: 1rem;
+}
+
+.promotional-cards__box h3 {
+	margin: 0.2rem 0.2rem;
+	color: #4a4a4a;
+	font-size: 26px;
+	font-weight: 100;
+	letter-spacing: 0.2px;
 }
