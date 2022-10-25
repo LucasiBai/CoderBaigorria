@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useCarousel = (images, ref) => {
+const useCarousel = (images, ref, pixels) => {
 	const [currentIdx, setCurrentIdx] = useState({
 		previous: images.length - 1,
 		center: 0,
@@ -46,8 +46,8 @@ const useCarousel = (images, ref) => {
 	const changeImg = (direction) => {
 		imgsContainer.current.style.transition = "350ms ease transform";
 		imgsContainer.current.style.transform = `translateX(${
-			direction === "left" ? "" : "-"
-		}1400px)`;
+			direction === "left" ? pixels : `-${pixels}`
+		}px)`;
 
 		const endTrigger = () => {
 			changeCurrentImgs(direction);

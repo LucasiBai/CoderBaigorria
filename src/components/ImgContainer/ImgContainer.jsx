@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ImgPreview from "../ImgPreview/ImgPreview";
 import ImgSlide from "../ImgSlide/ImgSlide";
 
 import "./ImgContainer.css";
@@ -11,16 +12,19 @@ const ImgContainer = ({ imgs, alt }) => {
 	return (
 		<div className="img-container__box">
 			{preview && (
-				<div className="img-preview">
-					<button onClick={() => setPreview(false)}>X</button>
-					<img src={currentImg.img} alt={alt} />
-					<div>
-						<button>{"<"}</button>
-						<button>{">"}</button>
-					</div>
-				</div>
+				<ImgPreview
+					imgs={imgs}
+					alt={alt}
+					handleClosePreview={setPreview}
+					currentIdx={currentImg.id}
+				/>
 			)}
-			<ImgSlide imgs={imgs} alt={alt} handleMouseOver={setCurrentImg} />
+			<ImgSlide
+				imgs={imgs}
+				alt={alt}
+				handleMouseOver={setCurrentImg}
+				handleOpenPreview={() => setPreview(true)}
+			/>
 			<div className="main-img__container" onClick={() => setPreview(true)}>
 				<img src={currentImg.img} alt={alt} className="main-img" />
 			</div>

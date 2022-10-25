@@ -15,10 +15,6 @@ const mockImgs = [
 	"https://http2.mlstatic.com/D_NQ_NP_662815-MLA32618384530_102019-W.webp",
 	"https://http2.mlstatic.com/D_NQ_NP_887880-MLA49215970688_022022-O.webp",
 	"https://http2.mlstatic.com/D_NQ_NP_901496-MLA50264890144_062022-W.webp",
-	"https://http2.mlstatic.com/D_NQ_NP_662815-MLA32618384530_102019-W.webp",
-	"https://http2.mlstatic.com/D_NQ_NP_662815-MLA32618384530_102019-W.webp",
-	"https://http2.mlstatic.com/D_NQ_NP_901496-MLA50264890144_062022-W.webp",
-	"https://http2.mlstatic.com/D_NQ_NP_887880-MLA49215970688_022022-O.webp",
 ];
 
 function ItemDetail({ item }) {

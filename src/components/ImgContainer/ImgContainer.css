@@ -9,22 +9,3 @@
 	background-color: white;
 	cursor: pointer;
 }
-
-.img-preview {
-	position: fixed;
-	z-index: 50;
-	top: 0;
-	background: #00000075;
-	left: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100vw;
-	height: 100vh;
-}
-
-.img-preview img {
-	width: auto;
-	max-height: 37rem;
-	height: 90%;
-}

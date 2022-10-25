@@ -10,7 +10,7 @@ const FullCarousel = ({ images, autoPlay }) => {
 	const [autoMove, setAutoMove] = useState(autoPlay);
 
 	const imgsContainer = useRef(null);
-	const [currentImgs, changeImg] = useCarousel(images, imgsContainer);
+	const [currentImgs, changeImg] = useCarousel(images, imgsContainer, 1400);
 
 	useEffect(() => {
 		if (autoMove) {

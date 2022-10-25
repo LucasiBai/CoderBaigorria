@@ -1,6 +1,14 @@
 import "./ImgSlideItem.css";
 
-const ImgSlideItem = ({ img, alt, idx, selected, handleMouseOver, rest }) => {
+const ImgSlideItem = ({
+	img,
+	alt,
+	idx,
+	selected,
+	handleMouseOver,
+	handleOnClick,
+	rest,
+}) => {
 	return (
 		<button
 			className="img-slide__item"
@@ -12,6 +20,7 @@ const ImgSlideItem = ({ img, alt, idx, selected, handleMouseOver, rest }) => {
 					  }
 					: {}
 			}
+			onClick={rest ? handleOnClick : null}
 		>
 			{rest > 0 && <span>+{rest}</span>}
 			<img src={img} alt={alt} />

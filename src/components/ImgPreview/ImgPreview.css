@@ -1,0 +1,40 @@
+.img-preview {
+	position: fixed;
+	z-index: 50;
+	top: 0;
+	background: #00000075;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	flex-direction: column;
+}
+
+.img-preview img {
+	width: 592px;
+	margin: 0 500px;
+	max-height: 592px;
+	height: 90%;
+	object-fit: contain;
+}
+
+.img-preview span {
+	display: flex;
+}
+
+.img-preview .left-button,
+.img-preview .right-button,
+.img-preview .close-button {
+	position: absolute;
+	z-index: 51;
+}
+
+.img-preview .right-button {
+	right: 2rem;
+}
+
+.img-preview .left-button {
+	left: 1rem;
+}
