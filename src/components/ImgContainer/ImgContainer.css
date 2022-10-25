@@ -1,8 +1,10 @@
+.img-container__box {
+	display: flex;
+}
+
 .img-container__box .main-img {
-	height: 350px;
-	width: 400px;
+	height: 461px;
+	width: 441px;
 	object-fit: contain;
-	border-radius: 10px;
-	box-shadow: 1px 1px 9px #00000028;
 	background-color: white;
 }

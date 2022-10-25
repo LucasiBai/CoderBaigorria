@@ -1,0 +1,8 @@
+.select-imgs__container {
+	display: grid;
+	grid-template-columns: 1fr;
+	padding: 0 0.5rem;
+	background-color: white;
+	gap: 4px;
+	height: 461px;
+}

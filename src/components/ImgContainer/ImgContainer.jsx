@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ImgSlide from "../ImgSlide/ImgSlide";
 
 import "./ImgContainer.css";
 
@@ -7,8 +8,8 @@ const ImgContainer = ({ imgs, alt }) => {
 
 	return (
 		<div className="img-container__box">
-			<div></div>
-			<div>
+			<ImgSlide imgs={imgs} alt={alt} handleMouseOver={setCurrentImg} />
+			<div className="main-img__container">
 				<img src={currentImg} alt={alt} className="main-img" />
 			</div>
 		</div>
