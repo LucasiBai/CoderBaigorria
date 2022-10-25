@@ -8,7 +8,7 @@ const ImgSlide = ({ imgs, alt, handleMouseOver }) => {
 	const maxImgs = imgs.length > 6 ? imgs.slice(0, 6) : imgs;
 
 	const changeImg = (idx) => {
-		handleMouseOver(imgs[idx]);
+		handleMouseOver({ img: imgs[idx], id: idx });
 		setSelectedItem(idx);
 	};
 
