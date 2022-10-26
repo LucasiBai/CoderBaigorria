@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import GhostButton from "../GhostButton/GhostButton";
 import Button from "../Button/Button";
@@ -10,32 +10,58 @@ import "./CartInstance.css";
 export default function CartInstance({
 	initial,
 	stock,
-	price,
+	selled,
 	count,
 	handleFunctions,
 }) {
+	const navigate = useNavigate();
+
+	const HandleAddAndGoCart = () => {
+		handleFunctions[1]();
+		navigate("/cart");
+	};
+
 	return (
 		<div className="counter-box">
-			<h3 className="detail-description__price" id="cart-instance__price">
-				${new Intl.NumberFormat().format((price * count).toFixed(2))}
-			</h3>
-			<div>
-				<h3>Cantidad</h3>
+			<div className="send-info">
+				<h4>Envío a todo el pais</h4>
+				<Link>
+					<h5>Ver costos de envío</h5>
+				</Link>
+			</div>
+
+			<div className="count">
+				<h4>
+					Stock disponible {stock} | {selled ? selled : "0"} vendidos
+				</h4>
 				<ItemCount
 					className="counter-box__item"
 					count={count}
 					initial={initial}
 					stock={stock}
-					margin="0.7rem 0.7rem 1.5rem 0.7rem"
+					margin={"0.2rem"}
 					handleFunction={handleFunctions[0]}
 				/>
 			</div>
-			<Button text="Comprar ahora" className="counter-box__item" />
-			<GhostButton
-				text={stock ? "Agregar al carrito" : "Sin stock disponible"}
-				className={stock ? "" : "disabled"}
-				handleFunction={handleFunctions[1]}
-			/>
+
+			<div className="add-buttons">
+				{stock ? (
+					<Button
+						text="Comprar ahora"
+						onClick={HandleAddAndGoCart}
+						className="counter-box__item"
+					/>
+				) : (
+					<></>
+				)}
+				<GhostButton
+					text={stock ? "Agregar al carrito" : "Sin stock disponible"}
+					className={stock ? "" : "disabled"}
+					handleFunction={handleFunctions[1]}
+				/>
+			</div>
+
+			<h6>Garantía de 12 meses de fábrica.</h6>
 		</div>
 	);
 }

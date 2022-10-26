@@ -1,32 +1,36 @@
 .detail-item {
-	display: flex;
+	display: grid;
+	grid-auto-flow: column;
 	background-color: white;
-	padding: 2.5rem;
-	border-radius: 15px;
+	grid-template-columns: 1fr 2fr 1fr;
+	padding: 1rem 0.5rem;
+	border-radius: 7px;
 	max-width: 1150px;
 	width: 100%;
-	justify-content: center;
-	box-shadow: 1px 1px 9px #0000004b;
+	box-shadow: 0px 0px 6px #00000017;
 }
 .detail-item a {
 	color: #0cb4a3;
 }
 .detail-description__title {
-	font-size: 22px;
+	font-size: 27px;
+	width: 100%;
+	max-width: 350px;
+	font-weight: 500;
 }
 .detail-description {
-	margin: 1rem;
+	margin: 2rem 0.5rem 0 0.5rem;
 }
 
 .detail-description__price-box {
-	margin: 1rem 0.5rem;
+	margin: 1.2rem 0 2.2rem;
 }
 
 .detail-description__price,
 .detail-description__cuotas,
 .detail-description__price-box a {
-	font-size: 25px;
-	font-weight: normal;
+	font-size: 32px;
+	font-weight: 100;
 	margin: 2px;
 }
 .detail-description__cuotas,
@@ -34,9 +38,10 @@
 	font-size: 16px;
 }
 
-.detail-description__data h4,
-.detail-description__data a,
-.detail-description__data ul {
+.detail-description__data p {
 	font-size: 15px;
 	margin: 2px;
+	hyphens: auto;
+	max-width: 350px;
+	width: 100%;
 }

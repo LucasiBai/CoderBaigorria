@@ -4,15 +4,14 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
-	border-radius: 10px;
-	box-shadow: 1px 1px 9px #0000006b;
+	border-radius: 7px;
+	box-shadow: 0px 0px 3px #00000017;
 }
 .counter-box div h3 {
-	margin: 0 1rem;
+	margin: 0;
 }
 .counter-box__item {
-	margin: 2rem;
+	margin: 2rem 0;
 }
 #cart-instance__price {
 	margin: 1.5rem;
@@ -20,4 +19,26 @@
 }
 .cart-instance__add-elements {
 	margin: 1rem 0.5rem;
+}
+
+.counter-box h4,
+.send-info h5 {
+	font-weight: 100;
+}
+
+.send-info {
+	margin: 0 0.2rem 2rem 0.2rem;
+}
+
+.counter-box .count h4,
+.counter-box h6 {
+	font-weight: 100;
+	color: #686868;
+	font-size: 13px;
+	width: 100%;
+	margin: 0.5rem 0.2rem;
+}
+
+.counter-box .add-buttons {
+	margin: 2rem 0;
 }

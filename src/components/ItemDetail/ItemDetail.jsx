@@ -61,9 +61,7 @@ function ItemDetail({ item }) {
 						</div>
 
 						<div className="detail-description__data">
-							<h4>Lo que tenés que saber de este producto</h4>
-							<ul>{item.detail}</ul>
-							<Link>Ver más características</Link>
+							<p>{item.description}</p>
 						</div>
 					</div>
 					<CartInstance

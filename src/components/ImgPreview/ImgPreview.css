@@ -22,6 +22,9 @@
 
 .img-preview span {
 	display: flex;
+	height: 100vh;
+	display: flex;
+	align-items: center;
 }
 
 .img-preview .left-button,
@@ -51,7 +54,7 @@
 }
 
 .img-preview .close-button {
-	top: -54px;
+	top: 63px;
 	right: 131pc;
 	font-size: 25px;
 }
