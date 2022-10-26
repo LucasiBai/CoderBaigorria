@@ -15,6 +15,7 @@ const mockImgs = [
 	"https://http2.mlstatic.com/D_NQ_NP_662815-MLA32618384530_102019-W.webp",
 	"https://http2.mlstatic.com/D_NQ_NP_887880-MLA49215970688_022022-O.webp",
 	"https://http2.mlstatic.com/D_NQ_NP_901496-MLA50264890144_062022-W.webp",
+	"https://http2.mlstatic.com/D_NQ_NP_901496-MLA50264890144_062022-W.webp",
 ];
 
 function ItemDetail({ item }) {
@@ -35,7 +36,7 @@ function ItemDetail({ item }) {
 	useEffect(() => {
 		onCountChange(count);
 		setStock(item.stock - getItemCount(item.id));
-	}, [count, item.stock]);
+	}, [count, item.stock, item.id, getItemCount]);
 
 	return (
 		<article className="detail-item">

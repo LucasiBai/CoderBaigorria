@@ -29,6 +29,17 @@
 .img-preview .close-button {
 	position: absolute;
 	z-index: 51;
+	background: none;
+	border: none;
+	padding: 9px;
+	font-size: 40px;
+	color: white;
+}
+.img-preview .left-button:hover,
+.img-preview .right-button:hover,
+.img-preview .close-button:hover {
+	background-color: rgba(255, 249, 249, 0.137);
+	cursor: pointer;
 }
 
 .img-preview .right-button {
@@ -37,4 +48,10 @@
 
 .img-preview .left-button {
 	left: 1rem;
+}
+
+.img-preview .close-button {
+	top: -54px;
+	right: 131pc;
+	font-size: 25px;
 }
