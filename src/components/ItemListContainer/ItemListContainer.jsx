@@ -2,7 +2,11 @@ import React, { useState, useEffect, useCallback } from "react";
 
 import { useParams } from "react-router-dom";
 
-import { getProducts, getFilterProducts } from "../../services/firestore";
+import {
+	getProducts,
+	getFilterProducts,
+	getOffers,
+} from "../../services/firestore";
 
 import Loader from "../Loader/Loader";
 import FullCarousel from "../FullCarousel/FullCarousel";
@@ -37,33 +41,20 @@ const images = [
 	},
 ];
 
-const itemsPromo = [
-	{
-		id: 1,
-		title: "HASTA 20% OFF EN HOGAR",
-		subtitle: "RENOVÁ TU CASA",
-		url: "/category/hogar",
-		img: "https://http2.mlstatic.com/D_NQ_NP_662815-MLA32618384530_102019-W.webp",
-	},
-	{
-		id: 2,
-		title: "HASTA 15% OFF EN JARDÍN",
-		subtitle: "ILUMINA TU JARDÍN",
-		url: "/category/jardin",
-		img: "https://http2.mlstatic.com/D_NQ_NP_846639-MLA49041116784_022022-O.webp",
-	},
-];
-
 const ItemListContainer = ({ greeting }) => {
-	const [data, setData] = useState([]);
 	const [loader, setLoader] = useState(true);
+
+	const [data, setData] = useState([]);
 	const [greet, setGreeting] = useState(greeting);
+	const [offers, setOffers] = useState([]);
 
 	const { categoryId } = useParams();
 
 	// Obtenemos los datos
 	const getData = useCallback(async () => {
 		setLoader(true);
+
+		// Obtener productos
 		let data;
 		if (!categoryId) {
 			setGreeting(greeting);
@@ -73,6 +64,11 @@ const ItemListContainer = ({ greeting }) => {
 			data = await getFilterProducts(categoryId);
 		}
 		setData(data);
+
+		// Obtener Ofertas
+		const resOffer = await getOffers();
+		setOffers(resOffer);
+
 		setLoader(false);
 	}, [categoryId, greeting]);
 
@@ -94,7 +90,7 @@ const ItemListContainer = ({ greeting }) => {
 					<ItemList datos={data} greeting={"Más vendidos"} />
 					<PromotionalCardsContainer
 						greeting={"Promos Especiales"}
-						items={itemsPromo}
+						items={offers}
 						width={"1fr 1fr"}
 					/>
 					<ItemList datos={data} greeting={greet} height={2} />

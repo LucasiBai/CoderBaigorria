@@ -8,6 +8,7 @@
 	max-width: 1150px;
 	width: 100%;
 	box-shadow: 0px 0px 6px #00000017;
+	margin: 2rem 0;
 }
 .detail-item a {
 	color: #0cb4a3;
@@ -40,7 +41,7 @@
 
 .detail-description__data p {
 	font-size: 15px;
-	margin: 2px;
+	margin: 0 0 2rem;
 	hyphens: auto;
 	max-width: 350px;
 	width: 100%;

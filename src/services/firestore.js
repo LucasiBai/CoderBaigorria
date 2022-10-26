@@ -181,6 +181,13 @@ const getFavouriteProducts = async () => {
 	return itemListData;
 };
 
+const getOffers = async () => {
+	const refQuery = doc(firestore, "offers", "uwNNETD5z3M4OJ9Jw20q");
+	const itemListSnapshot = await getDoc(refQuery);
+
+	return itemListSnapshot.data().list;
+};
+
 // Métodos POST y PUT
 
 const updateStock = (products) => {
@@ -247,4 +254,5 @@ export {
 	deleteFavouriteProduct,
 	addProductToFavourite,
 	isInFavourite,
+	getOffers,
 };

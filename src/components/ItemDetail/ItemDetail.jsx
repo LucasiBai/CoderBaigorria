@@ -18,7 +18,7 @@ const mockImgs = [
 	"https://http2.mlstatic.com/D_NQ_NP_901496-MLA50264890144_062022-W.webp",
 ];
 
-function ItemDetail({ item }) {
+function ItemDetail({ item, loading }) {
 	const [count, setCount] = useState(1);
 	const [stock, setStock] = useState(item.stock);
 
@@ -39,8 +39,11 @@ function ItemDetail({ item }) {
 	}, [count, item.stock, item.id, getItemCount]);
 
 	return (
-		<article className="detail-item">
-			{!item.title ? (
+		<article
+			className="detail-item"
+			style={loading ? { display: "flex", justifyContent: "center" } : {}}
+		>
+			{loading ? (
 				<Loader />
 			) : (
 				<React.Fragment>
