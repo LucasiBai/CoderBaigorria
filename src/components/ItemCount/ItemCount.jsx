@@ -7,6 +7,7 @@ export default function ItemCount({
 	stock,
 	margin,
 	handleFunction,
+	className,
 }) {
 	const [itemCount, setItemCount] = useState(initial);
 
@@ -25,7 +26,10 @@ export default function ItemCount({
 	useEffect(() => setItemCount(count), [count]);
 
 	return (
-		<div className="counter-box-display" style={{ margin: margin }}>
+		<div
+			className={`counter-box-display ${className && className}`}
+			style={{ margin: margin }}
+		>
 			<button
 				onClick={() => {
 					changeItemCount("rest");

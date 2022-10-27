@@ -196,6 +196,12 @@ const getCarouselImgs = async () => {
 	return data;
 };
 
+const getBgCategory = async (category) => {
+	const imgs = await getCarouselImgs();
+	const img = imgs.find((item) => item.name === category);
+	return img.img;
+};
+
 // Métodos POST y PUT
 
 const updateStock = (products) => {
@@ -264,4 +270,5 @@ export {
 	isInFavourite,
 	getOffers,
 	getCarouselImgs,
+	getBgCategory,
 };

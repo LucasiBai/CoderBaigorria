@@ -49,14 +49,16 @@ export default function CartInstance({
 					<Button
 						text="Comprar ahora"
 						onClick={HandleAddAndGoCart}
-						className="counter-box__item"
+						className="counter-box__button"
 					/>
 				) : (
 					<></>
 				)}
 				<GhostButton
 					text={stock ? "Agregar al carrito" : "Sin stock disponible"}
-					className={stock ? "" : "disabled"}
+					className={
+						stock ? "counter-box__button" : "counter-box__button disabled"
+					}
 					handleFunction={handleFunctions[1]}
 				/>
 			</div>

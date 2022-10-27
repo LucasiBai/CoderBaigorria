@@ -53,7 +53,7 @@ const Cart = () => {
 	return (
 		<main>
 			<section className="list--box cart-box">
-				<h1 className="cart-title">Carrito</h1>
+				<h2 className="cart-title">Carrito</h2>
 				{!getCartCount() > 0 ? (
 					<EmptyCart />
 				) : askingBuyerData ? (

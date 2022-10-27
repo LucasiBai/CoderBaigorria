@@ -11,9 +11,16 @@
 .counter-box div h3 {
 	margin: 0;
 }
-.counter-box__item {
-	margin: 2rem 0;
+.counter-box__item,
+.counter-box__button {
+	width: 96%;
+	margin: 0 auto;
 }
+
+.counter-box__button {
+	margin: 0.2rem;
+}
+
 #cart-instance__price {
 	margin: 1.5rem;
 	font-size: 35px;
@@ -42,4 +49,7 @@
 
 .counter-box .add-buttons {
 	margin: 2rem 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }

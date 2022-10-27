@@ -10,6 +10,7 @@
 	width: 100vw;
 	height: 100vh;
 	flex-direction: column;
+	cursor: zoom-out;
 }
 
 .img-preview img {
@@ -18,6 +19,7 @@
 	max-height: 592px;
 	height: 90%;
 	object-fit: contain;
+	cursor: auto;
 }
 
 .img-preview span {
