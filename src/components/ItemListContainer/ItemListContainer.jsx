@@ -6,6 +6,7 @@ import {
 	getProducts,
 	getFilterProducts,
 	getOffers,
+	getCarouselImgs,
 } from "../../services/firestore";
 
 import Loader from "../Loader/Loader";
@@ -13,40 +14,13 @@ import FullCarousel from "../FullCarousel/FullCarousel";
 import ItemList from "../ItemList/ItemList";
 import PromotionalCardsContainer from "../PromotionalCardsContainer/PromotionalCardsContainer";
 
-const images = [
-	{
-		url: "/",
-		name: "Casa",
-		img: "https://images.unsplash.com/photo-1602872029708-84d970d3382b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1150&q=80",
-	},
-	{
-		url: "/",
-		name: "holi",
-		img: "https://images.unsplash.com/photo-1666009812623-31fb98d10579?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1150&q=80",
-	},
-	{
-		url: "/",
-		name: "lol",
-		img: "https://images.unsplash.com/photo-1666224182627-7dc792e4b419?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1150&q=80",
-	},
-	{
-		url: "/",
-		name: "Machu Pichu Peru",
-		img: "https://images.unsplash.com/photo-1666240073343-9801b7b5b949?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1150&q=80",
-	},
-	{
-		url: "/category/jardin",
-		name: "esaaa",
-		img: "https://images.unsplash.com/photo-1666060736317-93b546d00a68?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1150&q=80",
-	},
-];
-
 const ItemListContainer = ({ greeting }) => {
 	const [loader, setLoader] = useState(true);
 
 	const [data, setData] = useState([]);
 	const [greet, setGreeting] = useState(greeting);
 	const [offers, setOffers] = useState([]);
+	const [corouselImgs, setCarouselImgs] = useState([]);
 
 	const { categoryId } = useParams();
 
@@ -69,6 +43,10 @@ const ItemListContainer = ({ greeting }) => {
 		const resOffer = await getOffers();
 		setOffers(resOffer);
 
+		// Obtener Imágenes Carousel
+		const resImgs = await getCarouselImgs();
+		setCarouselImgs(resImgs);
+
 		setLoader(false);
 	}, [categoryId, greeting]);
 
@@ -86,7 +64,7 @@ const ItemListContainer = ({ greeting }) => {
 				</div>
 			) : (
 				<React.Fragment>
-					<FullCarousel images={images} autoPlay />
+					<FullCarousel images={corouselImgs} autoPlay />
 					<ItemList datos={data} greeting={"Más vendidos"} />
 					<PromotionalCardsContainer
 						greeting={"Promos Especiales"}

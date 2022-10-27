@@ -54,7 +54,7 @@
 }
 
 .img-preview .close-button {
-	top: 63px;
-	right: 131pc;
+	top: 0.5rem;
+	right: 2rem;
 	font-size: 25px;
 }

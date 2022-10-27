@@ -29,22 +29,18 @@ const ImgPreview = ({ imgs, currentIdx, alt, handleClosePreview }) => {
 			<button className="right-button" onClick={changeImg}>
 				<FontAwesomeIcon icon={faAngleRight} />
 			</button>
-			<div
-				style={{ position: "relative" }}
+			<button
 				onClick={() => handleClosePreview(false)}
+				className="close-button"
 			>
-				<button
-					onClick={() => handleClosePreview(false)}
-					className="close-button"
-				>
-					<FontAwesomeIcon icon={faX} />
-				</button>
-				<span ref={previewImg}>
-					<img src={currentImgs[0]} alt={alt} />
-					<img src={currentImgs[1]} alt={alt} />
-					<img src={currentImgs[2]} alt={alt} />
-				</span>
-			</div>
+				<FontAwesomeIcon icon={faX} />
+			</button>
+
+			<span ref={previewImg} onClick={() => handleClosePreview(false)}>
+				<img src={currentImgs[0]} alt={alt} />
+				<img src={currentImgs[1]} alt={alt} />
+				<img src={currentImgs[2]} alt={alt} />
+			</span>
 		</div>
 	);
 };

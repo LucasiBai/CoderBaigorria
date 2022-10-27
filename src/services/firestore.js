@@ -188,6 +188,14 @@ const getOffers = async () => {
 	return itemListSnapshot.data().list;
 };
 
+const getCarouselImgs = async () => {
+	const resQuery = collection(firestore, "carouselImg");
+	const snapshot = await getDocs(resQuery);
+
+	const data = snapshot.docs.map((item) => ({ id: item.id, ...item.data() }));
+	return data;
+};
+
 // Métodos POST y PUT
 
 const updateStock = (products) => {
@@ -255,4 +263,5 @@ export {
 	addProductToFavourite,
 	isInFavourite,
 	getOffers,
+	getCarouselImgs,
 };
