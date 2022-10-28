@@ -218,6 +218,13 @@ const sendOrder = async (orderData) => {
 	return response.id;
 };
 
+const sendContactData = async (contactData) => {
+	const resQuery = collection(firestore, "messages");
+	const response = await addDoc(resQuery, contactData);
+
+	return response.id;
+};
+
 const updateProductsList = async () => {
 	const updatedData = products.map((item) => {
 		delete item.id;
@@ -264,6 +271,7 @@ export {
 	getProducts,
 	getFavouriteProducts,
 	sendOrder,
+	sendContactData,
 	updateProductsList,
 	deleteFavouriteProduct,
 	addProductToFavourite,

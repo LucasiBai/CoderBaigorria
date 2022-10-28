@@ -10,8 +10,7 @@ import {
 import { cartContext } from "../../contexts/cartContext";
 
 import CartWidget from "../CartWidget/CartWidget";
-import ProfileButton from "../ProfileButton/ProfileButton";
-import SearchBar from "../SearchBar/SearchBar";
+
 import CustomSelect from "../CustomSelect/CustomSelect";
 import NavListContainer from "../NavListContainer/NavListContainer";
 
@@ -28,7 +27,6 @@ export default function NavBar({ brandImg }) {
 				</Link>
 			</div>
 			<ul className="nav--items">
-				<li>{/* <SearchBar /> */}</li>
 				<li className="nav-item">
 					<Link to="/">Principal</Link>
 				</li>
@@ -69,9 +67,6 @@ export default function NavBar({ brandImg }) {
 						<CartWidget name={"Carrito"} link="/cart" />
 					)}
 				</li>
-				{/* <li className="nav-item">
-					<ProfileButton />
-				</li> */}
 			</ul>
 		</nav>
 	);

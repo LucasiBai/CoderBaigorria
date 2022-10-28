@@ -1,10 +1,22 @@
-import { Link } from "react-router-dom";
-
-import CustomButton from "../CustomButton/CustomButton";
-
-import { faLink } from "@fortawesome/free-solid-svg-icons";
+import {
+	faTwitter,
+	faWhatsapp,
+	faLinkedin,
+	faFacebook,
+	faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 
 import "./Footer.css";
+import SocialMediaButtons from "../SocialMediaButtons/SocialMediaButtons";
+import ContactForm from "../ContactForm/ContactForm";
+
+const socialmedia = [
+	{ brand: faWhatsapp, url: "https://www.whatsapp.com" },
+	{ brand: faFacebook, url: "https://www.facebook.com/lacandela.iluminacion" },
+	{ brand: faLinkedin, url: "https://www.linkedin.com" },
+	{ brand: faTwitter, url: "https://www.twitter.com" },
+	{ brand: faYoutube, url: "https://www.youtube.com" },
+];
 
 const Footer = ({ brand, address, backColor }) => {
 	return (
@@ -24,41 +36,11 @@ const Footer = ({ brand, address, backColor }) => {
 					alignItems: "center",
 				}}
 			>
-				<div className="foo--contact">
-					<h3>Contacto</h3>
-					<form
-						action="POST"
-						style={{ display: "flex", flexDirection: "column" }}
-					>
-						<input type="text" placeholder="Nombre" />
-						<input type="email" placeholder="Email" />
-						<textarea name="" id="" cols="30" rows="10" placeholder="Mensaje" />
-						<input type="submit" value="Enviar" id="foo-submit" />
-					</form>
-				</div>
+				<ContactForm />
 				<hr />
 				<div className="foo--information">
 					<h3>Nuestras Redes</h3>
-					<span className="foo--buttons">
-						<Link>
-							<CustomButton icon={faLink} style={{ padding: "0.7rem" }} />
-						</Link>
-						<Link>
-							<CustomButton icon={faLink} style={{ padding: "0.7rem" }} />
-						</Link>
-						<Link>
-							<CustomButton icon={faLink} style={{ padding: "0.7rem" }} />
-						</Link>
-						<Link>
-							<CustomButton icon={faLink} style={{ padding: "0.7rem" }} />
-						</Link>
-						<Link>
-							<CustomButton icon={faLink} style={{ padding: "0.7rem" }} />
-						</Link>
-						<Link>
-							<CustomButton icon={faLink} style={{ padding: "0.7rem" }} />
-						</Link>
-					</span>
+					<SocialMediaButtons socialmedia={socialmedia} />
 					<h5>2022© {brand}, todos los derechos reservados</h5>
 					<h5>{address}</h5>
 				</div>
