@@ -37,7 +37,7 @@ function ItemDetail({ item, loading }) {
 				<Loader />
 			) : (
 				<React.Fragment>
-					<ImgContainer imgs={[item.img]} alt={item.title} />
+					<ImgContainer imgs={item.img} alt={item.title} />
 					<div className="detail-description">
 						<h2 className="detail-description__title">{item.title}</h2>
 						<div className="detail-description__price-box">
@@ -63,6 +63,7 @@ function ItemDetail({ item, loading }) {
 						price={item.price}
 						count={count}
 						handleFunctions={[onCountChange, onAddToCart]}
+						selled={item.selled && item.selled}
 					/>
 				</React.Fragment>
 			)}
