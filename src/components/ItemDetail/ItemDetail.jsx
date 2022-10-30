@@ -8,16 +8,6 @@ import Loader from "../Loader/Loader";
 
 import "./ItemDetail.css";
 
-const mockImgs = [
-	"https://http2.mlstatic.com/D_NQ_NP_662815-MLA32618384530_102019-W.webp",
-	"https://http2.mlstatic.com/D_NQ_NP_887880-MLA49215970688_022022-O.webp",
-	"https://http2.mlstatic.com/D_NQ_NP_662815-MLA32618384530_102019-W.webp",
-	"https://http2.mlstatic.com/D_NQ_NP_662815-MLA32618384530_102019-W.webp",
-	"https://http2.mlstatic.com/D_NQ_NP_887880-MLA49215970688_022022-O.webp",
-	"https://http2.mlstatic.com/D_NQ_NP_901496-MLA50264890144_062022-W.webp",
-	"https://http2.mlstatic.com/D_NQ_NP_901496-MLA50264890144_062022-W.webp",
-];
-
 function ItemDetail({ item, loading }) {
 	const [count, setCount] = useState(1);
 	const [stock, setStock] = useState(item.stock);
@@ -47,7 +37,7 @@ function ItemDetail({ item, loading }) {
 				<Loader />
 			) : (
 				<React.Fragment>
-					<ImgContainer imgs={[item.img, ...mockImgs]} alt={item.title} />
+					<ImgContainer imgs={[item.img]} alt={item.title} />
 					<div className="detail-description">
 						<h2 className="detail-description__title">{item.title}</h2>
 						<div className="detail-description__price-box">

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 
 import useCarousel from "../../hooks/useCarousel";
 
@@ -23,12 +23,17 @@ const ImgPreview = ({ imgs, currentIdx, alt, handleClosePreview }) => {
 
 	return (
 		<div className="img-preview">
-			<button className="left-button" onClick={() => changeImg("left")}>
-				<FontAwesomeIcon icon={faAngleLeft} />
-			</button>
-			<button className="right-button" onClick={changeImg}>
-				<FontAwesomeIcon icon={faAngleRight} />
-			</button>
+			{imgs.length > 1 && (
+				<React.Fragment>
+					<button className="left-button" onClick={() => changeImg("left")}>
+						<FontAwesomeIcon icon={faAngleLeft} />
+					</button>
+					<button className="right-button" onClick={changeImg}>
+						<FontAwesomeIcon icon={faAngleRight} />
+					</button>
+				</React.Fragment>
+			)}
+
 			<button
 				onClick={() => handleClosePreview(false)}
 				className="close-button"

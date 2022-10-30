@@ -38,6 +38,34 @@ const FullCarousel = ({ images, autoPlay }) => {
 					className={"carousel-right"}
 					handleSlide={changeImg}
 				/>
+				<div style={{ display: "flex" }}>
+					{images.map((item) => (
+						<div
+							style={
+								item.id === currentImgs[1].id
+									? {
+											backgroundColor: "blue",
+											width: 13,
+											height: 13,
+											borderRadius: "100%",
+											display: "flex",
+											justifyContent: "center",
+											alignItems: "center",
+									  }
+									: {}
+							}
+						>
+							<div
+								style={{
+									backgroundColor: "green",
+									width: 10,
+									height: 10,
+									borderRadius: "100%",
+								}}
+							></div>
+						</div>
+					))}
+				</div>
 				<FullCarouselImg images={currentImgs} reference={imgsContainer} />
 			</div>
 		</section>
