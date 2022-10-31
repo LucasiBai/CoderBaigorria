@@ -14,6 +14,7 @@ export default function CarouselDots({ images, currentImgs }) {
 		>
 			{images.map((item) => (
 				<div
+					key={item.id}
 					style={
 						item.id === currentImgs[1].id
 							? {

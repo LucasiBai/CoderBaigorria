@@ -2,10 +2,14 @@ import { useState, useContext, useEffect } from "react";
 
 import { cartContext } from "../../contexts/cartContext";
 
+import LabelInputForm from "../LabelInputForm/LabelInputForm";
+
+import "./CheckoutForm.css";
+
 const CheckoutForm = ({ onSubmit }) => {
 	const [formData, setFormData] = useState({
-		firstName: "Lucas",
-		lastName: "Bai",
+		firstName: "Lucas Ignacio",
+		lastName: "Baigorria",
 		phone: "351 123 4567",
 		email: "luquillo@gmail.com",
 	});
@@ -28,37 +32,52 @@ const CheckoutForm = ({ onSubmit }) => {
 	useEffect(() => setBuyerData(formData));
 
 	return (
-		<section>
+		<section className="checkout-form">
 			<form
 				onSubmit={submitHandler}
-				onChange={updateFormData}
 				style={{ display: "flex", flexDirection: "column" }}
 			>
-				<input
+				<LabelInputForm
 					type="text"
 					name="firstName"
 					value={formData.firstName}
-					required={true}
-				/>
-				<input
+					required
+					onChange={updateFormData}
+				>
+					Nombre:
+				</LabelInputForm>
+
+				<LabelInputForm
 					type="text"
 					name="lastName"
 					value={formData.lastName}
-					required={true}
-				/>
-				<input
+					required
+					onChange={updateFormData}
+				>
+					Apellido:
+				</LabelInputForm>
+
+				<LabelInputForm
 					type="text"
 					name="phone"
 					value={formData.phone}
-					required={true}
-				/>
-				<input
+					required
+					onChange={updateFormData}
+				>
+					Número de teléfono:
+				</LabelInputForm>
+
+				<LabelInputForm
 					type="text"
 					name="email"
 					value={formData.email}
 					required={true}
-				/>
-				<input type="submit" value={"Finalizar compra"} />
+					onChange={updateFormData}
+				>
+					Email:
+				</LabelInputForm>
+
+				<button type="submit">Finalizar compra</button>
 			</form>
 		</section>
 	);

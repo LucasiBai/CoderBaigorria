@@ -56,7 +56,7 @@ const Cart = () => {
 				<h2 className="cart-title">Carrito</h2>
 				{!getCartCount() > 0 ? (
 					<EmptyCart />
-				) : askingBuyerData ? (
+				) : !askingBuyerData ? (
 					<CheckoutForm onSubmit={makeOrder} />
 				) : (
 					<div

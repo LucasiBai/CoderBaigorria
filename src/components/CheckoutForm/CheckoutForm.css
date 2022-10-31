@@ -1,0 +1,26 @@
+.checkout-form form input,
+.checkout-form form button {
+	padding: 0.5em;
+	border-radius: 5px;
+	border: none;
+	margin: 0.25rem 0;
+	outline: none;
+}
+
+.checkout-form form button:hover {
+	background: rgb(219, 219, 219);
+	cursor: pointer;
+}
+
+.checkout-form form {
+	width: 80%;
+}
+
+.checkout-form {
+	display: flex;
+	justify-content: center;
+}
+
+.checkout-form span {
+	margin: 0.3rem 0;
+}
