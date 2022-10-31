@@ -22,15 +22,15 @@ const CustomSelect = ({ items, children }) => {
 			onMouseLeave={() => mouseOver(false)}
 			className="custom-select"
 		>
-			<p className="custom-select--title">
-				{children}{" "}
+			<div style={{ display: "flex", alignItems: "center" }}>
+				<p className="custom-select--title">{children} </p>
 				<span
 					style={{ fontSize: 10, color: "#f0f8ff94", position: "relative" }}
 				>
 					<FontAwesomeIcon icon={faAngleDown} />
 					{isOver && <div className="triangulo-equilatero-bottom" />}
 				</span>
-			</p>
+			</div>
 			{isOver && (
 				<span className="custom-select-box">
 					{items &&

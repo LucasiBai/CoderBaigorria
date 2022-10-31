@@ -1613,9 +1613,13 @@ const addProductToFavourite = async (id) => {
 	const refQuery = doc(firestore, "favouriteItems", "8qHOZimOypDaaGtCkY6s");
 	const snapshot = await getDoc(refQuery);
 
-	const updatedData = [...snapshot.data().itemsId, id];
+	const isInFavourite = snapshot.data().itemsId.some((item) => item === id);
 
-	updateDoc(refQuery, { itemsId: updatedData });
+	if (!isInFavourite) {
+		const updatedData = [...snapshot.data().itemsId, id];
+
+		updateDoc(refQuery, { itemsId: updatedData });
+	}
 };
 
 const isInFavourite = async (id) => {

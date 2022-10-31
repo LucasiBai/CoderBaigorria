@@ -10,7 +10,6 @@ import {
 import { cartContext } from "../../contexts/cartContext";
 
 import CartWidget from "../CartWidget/CartWidget";
-
 import CustomSelect from "../CustomSelect/CustomSelect";
 import NavListContainer from "../NavListContainer/NavListContainer";
 

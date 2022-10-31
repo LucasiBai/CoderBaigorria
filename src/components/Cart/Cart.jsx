@@ -44,7 +44,13 @@ const Cart = () => {
 
 	if (isLoading) {
 		return (
-			<section className="list--box">
+			<section
+				className="list--box"
+				style={{
+					display: "flex",
+					justifyContent: "center",
+				}}
+			>
 				<Loader />
 			</section>
 		);
@@ -56,7 +62,7 @@ const Cart = () => {
 				<h2 className="cart-title">Carrito</h2>
 				{!getCartCount() > 0 ? (
 					<EmptyCart />
-				) : !askingBuyerData ? (
+				) : askingBuyerData ? (
 					<CheckoutForm onSubmit={makeOrder} />
 				) : (
 					<div

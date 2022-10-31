@@ -36,8 +36,8 @@ const NavListContainer = ({
 			}}
 			className="nav-item-list"
 		>
-			<p className="nav-item-list--title">
-				{children}{" "}
+			<div style={{ display: "flex", alignItems: "center" }}>
+				<p className="nav-item-list--title">{children} </p>
 				<span
 					style={{ fontSize: 10, color: "#f0f8ff94", position: "relative" }}
 				>
@@ -45,11 +45,12 @@ const NavListContainer = ({
 					{isOver && (
 						<div
 							className="nav-list--triangulo-equilatero-bottom"
-							style={!arrow ? { left: -13 } : {}}
+							style={!arrow ? { left: -20, top: 0 } : {}}
 						/>
 					)}
 				</span>
-			</p>
+			</div>
+
 			{isOver && (
 				<NavList
 					title={children}

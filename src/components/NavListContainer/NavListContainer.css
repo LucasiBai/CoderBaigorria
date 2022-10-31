@@ -6,7 +6,7 @@
 .nav-item-list--title {
 	cursor: pointer;
 	color: aliceblue;
-	word-spacing: -2px;
+	margin-right: 2px;
 }
 
 .nav-list--triangulo-equilatero-bottom {
@@ -17,6 +17,6 @@
 	border-left: 10px solid transparent;
 	border-bottom: 10px solid rgb(65, 65, 65);
 	position: absolute;
-	top: 2px;
+	top: 4px;
 	left: -5.5px;
 }
