@@ -41,10 +41,9 @@ https://lacandelabaigorria.vercel.app/
 - FontAwesome
 - UIballs
 - Firebase
-<<<<<<< HEAD
-=======
+
 
 ## Example:
 ![screen2](https://user-images.githubusercontent.com/99888705/199101529-93555998-36da-4787-ac13-7f4fe1d4784c.gif)
 
->>>>>>> f313135b4c65fb41a2ad3f993432a4104e4a20fe
+
