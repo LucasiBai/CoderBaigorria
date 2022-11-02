@@ -36,9 +36,8 @@ https://lucasibaieco.netlify.app/
 ## Tools:
 
 - ReactJs
+- React Testing Library
 - ReactRouterDom
 - FontAwesome
 - UIballs
 - Firebase
-
-
