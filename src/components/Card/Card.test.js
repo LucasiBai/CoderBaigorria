@@ -6,7 +6,6 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter as Router } from "react-router-dom";
 
 import Card from "./Card";
-import userEvent from "@testing-library/user-event";
 
 test("Renders content", () => {
 	const itemMock = {
