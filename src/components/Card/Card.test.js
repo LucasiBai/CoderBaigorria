@@ -52,6 +52,13 @@ test("Card redirect", () => {
 	expect(clickingCard).toHaveAttribute("href", "/item/4");
 });
 
+test("Not render description", () => {
+	render(cardMock(itemMock));
+
+	const description = screen.queryByText(itemMock.description);
+	expect(description).not.toBeInTheDocument();
+});
+
 test("Hover render description", () => {
 	render(cardMock(itemMock));
 
@@ -72,4 +79,21 @@ test("Hover description cut", () => {
 		"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed...",
 	);
 	expect(description).toBeInTheDocument();
+});
+
+test("Not render Fav button", () => {
+	render(cardMock(itemMock));
+
+	const favButton = screen.queryByRole("button");
+	expect(favButton).not.toBeInTheDocument();
+});
+
+test("Hover render Fav button", () => {
+	render(cardMock(itemMock));
+
+	const article = screen.getByRole("article");
+	fireEvent.mouseOver(article);
+
+	const favButton = screen.getByRole("button");
+	expect(favButton).toBeInTheDocument();
 });
